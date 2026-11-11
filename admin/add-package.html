@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Travel Package – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <!-- Active link -->
+        <a href="add-package.html" class="admin-nav-link active"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Create Travel Package</h1>
+            <span class="admin-breadcrumb-sub">Inventory Management · Add New Worldwide Tour</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-right">
+          <a href="manage-packages.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i> Back to Packages
+          </a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- Page Header -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-sparkles"></i> New Tour Creation
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              Package Configuration Form
+            </h2>
+            <p class="admin-section-subtitle">Define package itinerary details, pricing tiers, accommodations, and publish settings.</p>
+          </div>
+        </div>
+
+        <!-- Add Package Multi-Section Form -->
+        <form action="manage-packages.html" method="get" class="admin-form-card">
+
+          <!-- Section 1: Basic Information -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-circle-info"></i> Basic Package Information</h3>
+              <span class="form-section-desc">Primary titles, regional destinations, and overview description</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group col-span-2">
+                <label class="form-label">Package Name <span class="required-star">*</span></label>
+                <input type="text" class="form-input" placeholder="e.g. Santorini Sunset &amp; Aegean Luxury Yacht Cruise" required>
+                <span class="form-hint">A catchy, descriptive luxury title displayed to customers.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Destination Country <span class="required-star">*</span></label>
+                <select class="form-select" required>
+                  <option value="">Select Country</option>
+                  <option value="maldives">Maldives</option>
+                  <option value="switzerland">Switzerland</option>
+                  <option value="france">France</option>
+                  <option value="indonesia">Indonesia</option>
+                  <option value="japan">Japan</option>
+                  <option value="italy">Italy</option>
+                  <option value="greece">Greece</option>
+                  <option value="uae">United Arab Emirates</option>
+                  <option value="thailand">Thailand</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Destination City / Region <span class="required-star">*</span></label>
+                <input type="text" class="form-input" placeholder="e.g. Oia, Santorini Island" required>
+              </div>
+
+              <div class="form-group col-span-2">
+                <label class="form-label">Package Description <span class="required-star">*</span></label>
+                <textarea class="form-textarea" placeholder="Provide a compelling overview of this luxury journey, highlights, culinary experiences, and landscape features..." required></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Media & Imagery -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-image"></i> Package Media &amp; Cover Image</h3>
+              <span class="form-section-desc">High-resolution travel photography (Recommended: 1920x1080 JPEG or WebP)</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group col-span-2">
+                <label class="form-label">Package Image URL or Relative Path <span class="required-star">*</span></label>
+                <input type="text" class="form-input" value="assets/images/santorini.jpg" required>
+              </div>
+
+              <div class="form-group col-span-2">
+                <label class="form-label">Upload New Cover Photo</label>
+                <div class="upload-dropzone">
+                  <div class="upload-icon-circle"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <strong style="color: var(--admin-primary); font-size: 0.95rem;">Drag and drop tour cover photography here</strong>
+                  <span style="font-size: 0.78rem; color: var(--admin-text-muted);">or click to browse files from your local storage</span>
+                  <input type="file" style="position: absolute; inset: 0; opacity: 0; cursor: pointer;">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Duration, Pricing & Inventory -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-calculator"></i> Duration, Rates &amp; Inventory</h3>
+              <span class="form-section-desc">Pricing structures, length of stay, and reservation capacity</span>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">Number of Days <span class="required-star">*</span></label>
+                <div class="input-group">
+                  <input type="number" class="form-input has-addon-right" value="7" min="1" required>
+                  <span class="input-addon-right">Days</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Number of Nights <span class="required-star">*</span></label>
+                <div class="input-group">
+                  <input type="number" class="form-input has-addon-right" value="6" min="0" required>
+                  <span class="input-addon-right">Nights</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Package Price (USD) <span class="required-star">*</span></label>
+                <div class="input-group">
+                  <span class="input-addon">$</span>
+                  <input type="number" class="form-input has-addon-left" value="2400" min="1" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Available Slots / Inventory <span class="required-star">*</span></label>
+                <input type="number" class="form-input" value="15" min="1" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Best Time to Visit <span class="required-star">*</span></label>
+                <input type="text" class="form-input" placeholder="e.g. May to October" value="May to October" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Package Publishing Status <span class="required-star">*</span></label>
+                <select class="form-select" required>
+                  <option value="published" selected>Published (Active &amp; Bookable)</option>
+                  <option value="draft">Draft (Private)</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Hotel, Transportation & Activities -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-hotel"></i> Hotel, Transport &amp; Experiences</h3>
+              <span class="form-section-desc">Accommodations, logistics, and included excursions</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Hotel &amp; Resort Details <span class="required-star">*</span></label>
+                <input type="text" class="form-input" placeholder="e.g. Canaves Oia Epitome Luxury Suites (5-Star)" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Transportation Details <span class="required-star">*</span></label>
+                <input type="text" class="form-input" placeholder="e.g. Aegean Airlines Business Class &amp; Private Mercedes Chauffeur" required>
+              </div>
+
+              <div class="form-group col-span-2">
+                <label class="form-label">Included Experiences &amp; Activities</label>
+                <div class="checkbox-pills-grid">
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-ship"></i> Sunset Catamaran Cruise</span>
+                  </label>
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-wine-glass"></i> Private Wine Tasting</span>
+                  </label>
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-spa"></i> Daily Spa &amp; Wellness</span>
+                  </label>
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-helicopter"></i> Helicopter Island Tour</span>
+                  </label>
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox">
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-person-swimming"></i> Scuba Diving Reef Pass</span>
+                  </label>
+                  <label class="checkbox-pill-item">
+                    <input type="checkbox" checked>
+                    <span class="checkbox-pill-label"><i class="fa-solid fa-utensils"></i> Michelin Star Dining</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Form Action Footer -->
+          <div class="admin-form-actions">
+            <a href="manage-packages.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" class="btn btn-accent">
+              <i class="fa-solid fa-floppy-disk"></i> Save &amp; Publish Package
+            </button>
+          </div>
+
+        </form>
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

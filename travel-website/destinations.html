@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worldwide Destinations – Travel Junkie Holidays</title>
+  <!-- Pure CSS Stylesheets - Zero JavaScript -->
+  <link rel="stylesheet" href="css/style.css?v=price-sm-v4">
+  <link rel="stylesheet" href="css/animations.css?v=like-pkg-v1">
+  <link rel="stylesheet" href="css/responsive.css?v=like-pkg-v1">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="header-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+
+        <!-- Mobile Checkbox Toggle (Pure CSS) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="nav-links-wrapper">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+            <li><a href="packages.html" class="nav-link">Packages</a></li>
+            <li><a href="hotels.html" class="nav-link">Hotels</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-accent nav-auth-btn">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>Login</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       FULL-PAGE HERO BANNER
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="page-hero-overlay" style="background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="container">
+      <div class="page-hero-content animate-slide-up">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-angle-right"></i>
+          <span>Worldwide Destinations</span>
+        </div>
+
+        <div class="section-badge badge-accent-soft" style="margin-bottom: 1.25rem;">
+          <i class="fa-solid fa-earth-americas"></i> Across All 6 Continents · 24+ Handpicked Destinations
+        </div>
+
+        <h1 class="page-hero-title">Worldwide Destinations</h1>
+        <p class="page-hero-subtitle">
+          Discover the World. Experience the Extraordinary. Explore handpicked destinations organized across all continents.
+        </p>
+
+        <!-- Destination Quick Search Bar -->
+        <div class="search-box-wrapper" style="max-width: 840px; width: 100%; margin: 1.5rem auto 2rem; text-align: left;">
+          <form class="search-form" action="destinations.html" method="get" style="grid-template-columns: 1.4fr 1fr auto;">
+            <div class="search-input-group">
+              <i class="fa-solid fa-location-dot search-icon"></i>
+              <div class="search-field-content">
+                <label for="dest-q" class="search-label">Search Destinations</label>
+                <input type="text" id="dest-q" name="q" class="search-input" placeholder="Country, City, or Region...">
+              </div>
+            </div>
+
+            <div class="search-input-group">
+              <i class="fa-solid fa-earth-americas search-icon"></i>
+              <div class="search-field-content">
+                <label for="dest-continent-select" class="search-label">Jump to Continent</label>
+                <select id="dest-continent-select" name="continent" class="search-select">
+                  <option value="#asia">Asia (6 Destinations)</option>
+                  <option value="#europe">Europe (6 Destinations)</option>
+                  <option value="#north-america">North America (3 Destinations)</option>
+                  <option value="#south-america">South America (3 Destinations)</option>
+                  <option value="#africa">Africa (4 Destinations)</option>
+                  <option value="#oceania">Oceania (3 Destinations)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-accent search-submit-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Search</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Hero Actions -->
+        <div style="display: flex; gap: 1.25rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#asia" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-compass"></i>
+            <span>Explore Continents</span>
+          </a>
+          <a href="packages.html" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-suitcase"></i>
+            <span>View All Packages</span>
+          </a>
+        </div>
+
+        <!-- Scroll Down Prompt -->
+        <a href="#continent-nav" class="hero-scroll-btn" title="Scroll to Continents" aria-label="Scroll to Continents">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT QUICK JUMP NAVIGATION BAR
+       ========================================================================== -->
+  <div id="continent-nav" class="continent-nav-bar">
+    <div class="container">
+      <div class="continent-tabs">
+        <a href="#asia" class="continent-tab-btn"><i class="fa-solid fa-earth-asia"></i> Asia</a>
+        <a href="#europe" class="continent-tab-btn"><i class="fa-solid fa-earth-europe"></i> Europe</a>
+        <a href="#north-america" class="continent-tab-btn"><i class="fa-solid fa-earth-americas"></i> North America</a>
+        <a href="#south-america" class="continent-tab-btn"><i class="fa-solid fa-mountain-sun"></i> South America</a>
+        <a href="#africa" class="continent-tab-btn"><i class="fa-solid fa-earth-africa"></i> Africa</a>
+        <a href="#oceania" class="continent-tab-btn"><i class="fa-solid fa-earth-oceania"></i> Oceania</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CONTINENT 1: ASIA (India, Japan, Thailand, Singapore, Maldives, Indonesia)
+       ========================================================================== -->
+  <section id="asia" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-earth-asia"></i> Continent</span>
+          <h2 class="continent-title">Asia</h2>
+          <p class="continent-desc">Ancient traditions, futuristic skylines, sacred temples, and tropical sanctuaries.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- India -->
+        <!-- India -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=800&q=80" alt="India" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Heritage & Culture</span>
+            <h3 class="package-title">India’s Golden Triangle & Royal Forts</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Delhi, Agra & Jaipur, India
+            </div>
+            <p class="destination-desc">
+              Experience the timeless grandeur of the Taj Mahal at sunrise, vibrant spice bazaars of Old Delhi, and royal Rajput palaces of Rajasthan.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> The Oberoi Amarvilas & Rambagh Palace
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-monument"></i> Taj Sunrise</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Private Chauffeur</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> Heritage Suites</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$750</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-india.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=india" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Japan -->
+        <!-- Japan -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Japan" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Cultural Odyssey</span>
+            <h3 class="package-title">Imperial Japan: Shrines, Tea & Zen</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Tokyo, Kyoto & Osaka, Japan
+            </div>
+            <p class="destination-desc">
+              Immerse yourself in Tokyo’s neon-lit skyscraper avenues, tranquil Zen temples in Kyoto, Mt. Fuji vistas, and ancient Shinto shrines.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Hoshinoya Tokyo & Kyoto Ryokan
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> Shinkansen Rail</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-torii-gate"></i> Zen Temples</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-mug-hot"></i> Tea Ceremony</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,750</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-japan.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=japan" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Thailand -->
+        <!-- Thailand -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?auto=format&fit=crop&w=800&q=80" alt="Thailand" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Tropical Escapes</span>
+            <h3 class="package-title">Phuket & Phi Phi Island Hopping</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Phuket, Krabi & Bangkok, Thailand
+            </div>
+            <p class="destination-desc">
+              Glittering Buddhist temples, floating markets, emerald karst islands rising from turquoise bays, and world-class warm Thai hospitality.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Banyan Tree Phuket Pool Villa
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Speedboat Tour</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-basket-shopping"></i> Floating Market</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-spa"></i> Thai Massage</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$820</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-thailand.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=thailand" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Singapore -->
+        <!-- Singapore -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80" alt="Singapore" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Urban Marvels</span>
+            <h3 class="package-title">Singapore Futuristic City & Sentosa Island</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Marina Bay & Sentosa, Singapore
+            </div>
+            <p class="destination-desc">
+              Futuristic Gardens by the Bay, Marina Bay Sands infinity pool, Michelin-starred hawker markets, and innovative green architecture.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Marina Bay Sands Sky Suite
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-tree"></i> Gardens by the Bay</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-cable-car"></i> Sentosa Cable Car</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> Hawker Feast</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,290</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-singapore.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=singapore" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Maldives -->
+        <!-- Maldives -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Honeymoon & Romance</span>
+            <h3 class="package-title">Tropical Maldives Overwater Romance</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> South Ari Atoll, Maldives
+            </div>
+            <p class="destination-desc">
+              Overwater bungalows perched above turquoise waters, pristine coral reefs, whale shark safaris, and ultimate barefoot luxury.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Soneva Jani Water Retreat
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-plane-up"></i> Seaplane Transfer</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Private Pool</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-sailboat"></i> Sunset Cruise</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,100</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-maldives.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=maldives" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Indonesia -->
+        <!-- Indonesia -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Indonesia" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Island Sanctuary</span>
+            <h3 class="package-title">Tropical Bali Coastal Villas & Temples</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Ubud & Seminyak, Indonesia
+            </div>
+            <p class="destination-desc">
+              Serene terraced rice fields in Ubud, sacred sea temples in Bali, volcanic sunrise treks, and relaxing holistic spa sanctuaries.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Maya Ubud Resort & The Legian
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-volcano"></i> Volcano Sunrise</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-spa"></i> Spa Rituals</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-house-chimney-window"></i> Private Villa</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$980</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-bali.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=bali" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT 2: EUROPE (France, Italy, Switzerland, Germany, Greece, UK)
+       ========================================================================== -->
+  <section id="europe" class="continent-section bg-secondary-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-earth-europe"></i> Continent</span>
+          <h2 class="continent-title">Europe</h2>
+          <p class="continent-desc">Epic history, world-renowned art museums, romantic river valleys, and spectacular alpine peaks.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- France -->
+        <!-- France -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="France" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Romantic Sunsets</span>
+            <h3 class="package-title">Parisian Romance & Riviera Sunsets</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Paris & Nice, France
+            </div>
+            <p class="destination-desc">
+              From the Eiffel Tower and Louvre museum in Paris to the sun-soaked Mediterranean promenades of Nice, Cannes, and Monaco.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> The Ritz Paris & Hotel Negresco
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-landmark"></i> Louvre VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-champagne-glasses"></i> Seine Dinner</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> TGV 1st Class</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,450</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-paris.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=paris" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Italy -->
+        <!-- Italy -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=800&q=80" alt="Italy" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Classical Wonders</span>
+            <h3 class="package-title">Classical Italy Family Wonder & Pizza</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Rome, Florence & Venice, Italy
+            </div>
+            <p class="destination-desc">
+              Walk the Roman Forum, glide down Venetian canals in historic gondolas, tour Renaissance Florence, and savor authentic regional cuisine.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Grand Hotel de la Minerve Rome
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-monument"></i> Colosseum VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Gondola Serenade</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-pizza-slice"></i> Pizza Class</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,350</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-italy.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=italy" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Switzerland -->
+        <!-- Switzerland -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1530122037265-a5f1f91d3b99?auto=format&fit=crop&w=800&q=80" alt="Switzerland" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Mountain Adventures</span>
+            <h3 class="package-title">Grand Swiss Alps Glacier Expedition</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Interlaken & Zermatt, Switzerland
+            </div>
+            <p class="destination-desc">
+              Pristine glaciers, panoramic alpine trains, cheese fondue feasts, and outdoor adventure amidst the dramatic Jungfrau massif.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Victoria-Jungfrau Grand Hotel & Spa
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> Glacier Express</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-mountain"></i> Jungfrau Peak</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-hotel"></i> 5★ Chalets</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,890</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-switzerland.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=switzerland" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Germany -->
+        <!-- Germany -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80" alt="Germany" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Fairytale Castles</span>
+            <h3 class="package-title">Bavarian Castles & Romantic Road Tour</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Munich & Black Forest, Germany
+            </div>
+            <p class="destination-desc">
+              Fairy-tale Bavarian castles like Neuschwanstein, vibrant Berlin creative quarters, romantic Rhine River cruises, and rich culture.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Hotel Vier Jahreszeiten Kempinski Munich
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-chess-rook"></i> Neuschwanstein VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Rhine Cruise</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> Alpine Rail</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,280</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-switzerland.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=germany" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Greece -->
+        <!-- Greece -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Greece" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Honeymoon & Romance</span>
+            <h3 class="package-title">Santorini Caldera Cliffside Romance</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Oia & Imerovigli, Greece
+            </div>
+            <p class="destination-desc">
+              Whitewashed caldera villages, dramatic sunset vistas over the Aegean, world-class volcanic wines, and ancient Minoan ruins.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Grace Hotel Caldera Suite
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-hot-tub-person"></i> Private Jacuzzi</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-wine-glass"></i> Wine Tastings</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Catamaran Sail</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,190</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-santorini.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=santorini" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- United Kingdom -->
+        <!-- United Kingdom -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80" alt="United Kingdom" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Royal Heritage</span>
+            <h3 class="package-title">London Royal Landmarks & Scottish Highlands</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> London & Edinburgh, United Kingdom
+            </div>
+            <p class="destination-desc">
+              Historic castles, Big Ben, the Cotswolds, dramatic Scottish Highlands, royal palaces, and timeless afternoon teas.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> The Savoy London & The Balmoral
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-crown"></i> Tower of London</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> Highland Express</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-mug-saucer"></i> Afternoon Tea</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,550</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-paris.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=uk" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT 3: NORTH AMERICA (United States, Canada, Mexico)
+       ========================================================================== -->
+  <section id="north-america" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-earth-americas"></i> Continent</span>
+          <h2 class="continent-title">North America</h2>
+          <p class="continent-desc">Dynamic cosmopolitan centers, majestic Rocky Mountains, and vibrant Caribbean coastlines.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- United States -->
+        <!-- United States -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=800&q=80" alt="United States" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 9 Days / 8 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Iconic Coastlines</span>
+            <h3 class="package-title">California Pacific Coast & Grand Canyon Luxe</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> San Francisco & Las Vegas, USA
+            </div>
+            <p class="destination-desc">
+              From New York City’s skyline and the Golden Gate Bridge to the awe-inspiring depths of the Grand Canyon and Hawaii’s volcanic shores.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> The Beverly Hills Hotel & Bellagio
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-helicopter"></i> Canyon Helicopter</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Highway 1 Drive</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-wine-glass"></i> Napa Tasting</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,200</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-canada.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=usa" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Canada -->
+        <!-- Canada -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&w=800&q=80" alt="Canada" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Family Wildlife</span>
+            <h3 class="package-title">Canadian Rockies Family Wildlife Safari</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Banff & Jasper, Canada
+            </div>
+            <p class="destination-desc">
+              Emerald alpine lakes in Banff, roaring Niagara Falls, cosmopolitan Vancouver, and boundless wilderness teeming with wildlife.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Fairmont Banff Springs Family Suite
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-car"></i> Family SUV</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-cable-car"></i> Gondola Passes</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-camera"></i> Wildlife Safari</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,650</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-canada.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=canada" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mexico -->
+        <!-- Mexico -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?auto=format&fit=crop&w=800&q=80" alt="Mexico" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">All-Inclusive Luxe</span>
+            <h3 class="package-title">Cancun Riviera Maya All-Inclusive Luxe</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Cancun & Tulum, Mexico
+            </div>
+            <p class="destination-desc">
+              Ancient Mayan ruins of Chichen Itza, colorful colonial cities, underground cenotes, and all-inclusive white-sand Caribbean beaches.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Rosewood Mayakoba Lagoon Suite
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-landmark"></i> Chichen Itza VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Cenote Diving</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Catamaran Sail</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,150</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-cancun.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=cancun" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT 4: SOUTH AMERICA (Brazil, Argentina, Peru)
+       ========================================================================== -->
+  <section id="south-america" class="continent-section bg-secondary-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-mountain-sun"></i> Continent</span>
+          <h2 class="continent-title">South America</h2>
+          <p class="continent-desc">Lush Amazonian rainforests, soaring Andean ranges, passionate rhythms, and mystical ruins.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Brazil -->
+        <!-- Brazil -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&fit=crop&w=800&q=80" alt="Brazil" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Vibrant Escapes</span>
+            <h3 class="package-title">Rio Carnival Wonders & Amazon Rainforest</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Rio de Janeiro & Manaus, Brazil
+            </div>
+            <p class="destination-desc">
+              Rio’s Christ the Redeemer and Copacabana beach, Iguazu Falls, vibrant samba beats, and the boundless biodiversity of the Amazon.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Belmond Copacabana Palace
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-person-praying"></i> Christ Redeemer VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-cable-car"></i> Sugarloaf Cable</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-tree"></i> Amazon Eco Lodge</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,850</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-peru.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=brazil" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Argentina -->
+        <!-- Argentina -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=800&q=80" alt="Argentina" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 9 Days / 8 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Glacier & Tango</span>
+            <h3 class="package-title">Buenos Aires Tango & Patagonia Glaciers</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Buenos Aires & El Calafate, Argentina
+            </div>
+            <p class="destination-desc">
+              Passionate tango in Buenos Aires, colossal Perito Moreno glaciers in Patagonia, and world-renowned Malbec wineries in Mendoza.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Alvear Palace & Los Sauces Casa Patagonica
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-snowflake"></i> Perito Moreno Trek</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-music"></i> Tango Salon</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-wine-glass"></i> Mendoza Tasting</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,950</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-peru.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=argentina" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Peru -->
+        <!-- Peru -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?auto=format&fit=crop&w=800&q=80" alt="Peru" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Ancient Mystique</span>
+            <h3 class="package-title">Inca Trail to Machu Picchu Explorer</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Cusco & Sacred Valley, Peru
+            </div>
+            <p class="destination-desc">
+              The enigmatic Inca Citadel of Machu Picchu, colonial plazas of Cusco, Sacred Valley weaving villages, and rich Andean heritage.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Belmond Sanctuary Lodge Machu Picchu
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-train"></i> Vistadome Rail</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-mountain"></i> Sacred Valley</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-person-hiking"></i> Inca Trail Permit</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,420</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-peru.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=peru" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT 5: AFRICA (Egypt, Kenya, South Africa, Morocco)
+       ========================================================================== -->
+  <section id="africa" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-earth-africa"></i> Continent</span>
+          <h2 class="continent-title">Africa</h2>
+          <p class="continent-desc">Untamed savanna wilderness, thrilling Big Five safaris, timeless pharaonic tombs, and medina bazaars.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-4">
+        <!-- Egypt -->
+        <!-- Egypt -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=800&q=80" alt="Egypt" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Ancient Pharaohs</span>
+            <h3 class="package-title">Wonders of Egypt & Ancient Nile Cruise</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Cairo, Luxor & Aswan, Egypt
+            </div>
+            <p class="destination-desc">
+              The Great Pyramids of Giza, the mysterious Sphinx, luxury Nile River cruises, and royal tombs in the historic Valley of the Kings.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Mena House Cairo & Oberoi Zahra Nile Cruise
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-monument"></i> Giza Pyramids VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Nile River Cruise</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-landmark"></i> Valley of Kings</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,350</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-egypt.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=egypt" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Kenya -->
+        <!-- Kenya -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Kenya" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Wild Safari</span>
+            <h3 class="package-title">Kenya Great Migration Safari & Mara Camps</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Masai Mara & Lake Nakuru, Kenya
+            </div>
+            <p class="destination-desc">
+              The awe-inspiring Great Migration across the Masai Mara, Big Five safari drives, Amboseli elephant vistas with Mt. Kilimanjaro backdrops.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Governors' Camp Masai Mara Luxury Tents
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-car-side"></i> Big-5 Game Drives</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-hot-air-balloon"></i> Bush Balloon</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-utensils"></i> Full Board Meals</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,150</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-kenya.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=kenya" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- South Africa -->
+        <!-- South Africa -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="South Africa" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Cape & Safari</span>
+            <h3 class="package-title">Cape Town Wonders & Kruger Big-5 Safari</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Cape Town & Kruger National Park, South Africa
+            </div>
+            <p class="destination-desc">
+              Table Mountain sunsets in Cape Town, Cape Peninsula penguins, premier Stellenbosch wine estates, and wild Kruger safaris.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> The Silo Hotel & Singita Boulders Lodge
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-cable-car"></i> Table Mountain</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-car-side"></i> Kruger Safaris</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-wine-glass"></i> Stellenbosch Wine</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,250</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-kenya.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=south-africa" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Morocco -->
+        <!-- Morocco -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=800&q=80" alt="Morocco" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Imperial Deserts</span>
+            <h3 class="package-title">Marrakech Medinas & Sahara Luxury Glamping</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Marrakech & Erg Chebbi Dunes, Morocco
+            </div>
+            <p class="destination-desc">
+              Labyrinthine medinas and fragrant spice souks of Marrakech, the blue lanes of Chefchaouen, and starry Sahara desert dune camps.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> La Mamounia Marrakech & Sahara Luxury Camp
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-tent"></i> Sahara Glamping</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-car-side"></i> Atlas 4x4 Tour</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-spa"></i> Hammam Ritual</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,120</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-egypt.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=morocco" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CONTINENT 6: OCEANIA (Australia, New Zealand, Fiji)
+       ========================================================================== -->
+  <section id="oceania" class="continent-section bg-secondary-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-earth-oceania"></i> Continent</span>
+          <h2 class="continent-title">Oceania</h2>
+          <p class="continent-desc">Sun-drenched harbour cities, glacial fjords, volcanic peaks, and secluded South Pacific coral atolls.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Australia -->
+        <!-- Australia -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=800&q=80" alt="Australia" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Reef & Rainforest</span>
+            <h3 class="package-title">Aussie Wildlife & Great Barrier Reef</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Sydney & Cairns, Australia
+            </div>
+            <p class="destination-desc">
+              Sydney Opera House and Harbour Bridge, the world’s largest coral reef system at the Great Barrier Reef, and ancient Daintree rainforest.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Park Hyatt Sydney & Silky Oaks Lodge
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Reef Snorkel</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-landmark"></i> Sydney Opera VIP</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-camera"></i> Koala Sanctuary</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,350</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-australia.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=australia" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- New Zealand -->
+        <!-- New Zealand -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=800&q=80" alt="New Zealand" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 9 Days / 8 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Alpine Wilderness</span>
+            <h3 class="package-title">New Zealand Southern Alps & Fjord Explorer</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Queenstown & Milford Sound, New Zealand
+            </div>
+            <p class="destination-desc">
+              Dramatic fjords of Milford Sound, adrenaline sports in Queenstown, geothermal geysers in Rotorua, and otherworldly landscapes.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Matakauri Lodge Queenstown
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Milford Sound</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-helicopter"></i> Glacier Landing</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-mountain"></i> Fjord Explorer</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$2,650</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-australia.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=new-zealand" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Fiji -->
+        <!-- Fiji -->
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Fiji" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+            <label class="package-like-toggle" title="Save to Favorites" aria-label="Save to Favorites">
+              <input type="checkbox" aria-label="Like Package">
+              <span class="like-heart-icon">
+                <i class="fa-regular fa-heart icon-unliked"></i>
+                <i class="fa-solid fa-heart icon-liked"></i>
+              </span>
+            </label>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Tropical Paradise</span>
+            <h3 class="package-title">Fiji Coral Coast & Private Island Sanctuary</h3>
+            <div class="package-destination-row">
+              <i class="fa-solid fa-location-dot"></i> Mamanuca & Yasawa Islands, Fiji
+            </div>
+            <p class="destination-desc">
+              Crystal-clear South Pacific waters, idyllic white-sand beaches, vibrant soft coral reefs, traditional kava ceremonies, and luxury bures.
+            </p>
+            <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 0.6rem;">
+              <strong>Accommodation:</strong> Likuliku Lagoon Resort Overwater Bure
+            </div>
+            <div class="package-inclusions">
+              <span class="inclusion-chip"><i class="fa-solid fa-ship"></i> Catamaran Cruise</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-water"></i> Reef Snorkeling</span>
+              <span class="inclusion-chip"><i class="fa-solid fa-umbrella-beach"></i> Private Bure</span>
+            </div>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Starting from</span>
+                <span class="price-val">$1,890</span>
+              </div>
+              <div class="package-actions">
+                <a href="package-maldives.html" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Itinerary</a>
+                <a href="contact.html?package=fiji" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+          <p class="footer-desc">
+            Discover the World. Experience the Extraordinary. Your premier global travel companion crafting bespoke luxury holidays across all 7 continents since 2012.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-angle-right"></i> All Destinations</a></li>
+            <li><a href="packages.html"><i class="fa-solid fa-angle-right"></i> Tour Packages</a></li>
+            <li><a href="hotels.html"><i class="fa-solid fa-angle-right"></i> Luxury Hotels</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Our Story</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact &amp; Support</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-angle-right"></i> Member Login</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Top Continents</h4>
+          <ul class="footer-links-list">
+            <li><a href="#asia"><i class="fa-solid fa-angle-right"></i> Asia Travel</a></li>
+            <li><a href="#europe"><i class="fa-solid fa-angle-right"></i> Europe Holidays</a></li>
+            <li><a href="#north-america"><i class="fa-solid fa-angle-right"></i> North America</a></li>
+            <li><a href="#south-america"><i class="fa-solid fa-angle-right"></i> South America</a></li>
+            <li><a href="#africa"><i class="fa-solid fa-angle-right"></i> African Safaris</a></li>
+            <li><a href="#oceania"><i class="fa-solid fa-angle-right"></i> Oceania &amp; Pacific</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Global Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>742 Evergreen Boulevard, Suite 400, New York, NY 10001, USA</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (800) 555-8728 / +44 20 7946 0921</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>destinations@travelora.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>24/7 International Concierge Support</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Travel Junkie Holidays Inc. All rights reserved. Pure HTML5 &amp; CSS3.
+        </div>
+        <div style="font-size: 0.85rem; color: #9FB3C8;">
+          Discover the World. Experience the Extraordinary.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+</body>
+</html>

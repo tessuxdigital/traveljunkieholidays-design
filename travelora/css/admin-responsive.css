@@ -1,0 +1,194 @@
+/* ==========================================================================
+   TRAVELORA – ADMIN RESPONSIVE STYLESHEET
+   Desktop, Laptop, Tablet & Mobile Views - Pure CSS Media Queries
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   WIDESCREEN / LARGE DESKTOPS (max-width: 1400px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1400px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   LAPTOPS / DESKTOPS (max-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .filter-item:first-child {
+    grid-column: span 2;
+  }
+
+  .filter-actions {
+    grid-column: span 2;
+    justify-content: flex-end;
+  }
+
+  .order-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TABLETS (max-width: 1024px)
+   Mobile Off-Canvas Drawer Activation
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .admin-sidebar {
+    left: -290px;
+    box-shadow: none;
+  }
+
+  #admin-sidebar-toggle:checked ~ .admin-sidebar {
+    left: 0;
+    box-shadow: 10px 0 35px rgba(10, 28, 46, 0.45);
+  }
+
+  #admin-sidebar-toggle:checked ~ .admin-sidebar-backdrop {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .admin-toggle-btn {
+    display: flex;
+  }
+
+  .admin-sidebar-close {
+    display: flex;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-topbar-search {
+    max-width: 260px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE PHONES & SMALL TABLETS (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .admin-topbar {
+    padding: 0 1rem;
+    height: 68px;
+  }
+
+  .admin-topbar-search {
+    display: none;
+  }
+
+  .admin-view-site-link span {
+    display: none;
+  }
+
+  .admin-content {
+    padding: 1.25rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-item:first-child {
+    grid-column: span 1;
+  }
+
+  .filter-actions {
+    grid-column: span 1;
+    justify-content: flex-start;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.col-span-2,
+  .form-group.col-span-3 {
+    grid-column: span 1;
+  }
+
+  .admin-form-section {
+    padding: 1.25rem 1rem;
+  }
+
+  .admin-form-actions {
+    padding: 1rem;
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .admin-form-actions .btn {
+    width: 100%;
+  }
+
+  .order-management-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-action-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .order-action-buttons .btn {
+    width: 100%;
+  }
+
+  .admin-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   EXTRA SMALL SCREENS (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .admin-page-title {
+    font-size: 1.15rem;
+  }
+
+  .admin-stat-card {
+    padding: 1.1rem;
+  }
+
+  .stat-val {
+    font-size: 1.5rem;
+  }
+
+  .admin-table td,
+  .admin-table thead th {
+    padding: 0.75rem 0.85rem;
+  }
+}

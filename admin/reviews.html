@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Reviews &amp; Feedback – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+        <!-- Active Link -->
+        <a href="reviews.html" class="admin-nav-link active"><i class="fa-solid fa-star"></i><span>Reviews</span><span class="admin-nav-badge badge-info-nav">342</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Customer Reviews &amp; Ratings</h1>
+            <span class="admin-breadcrumb-sub">Traveler Feedback Moderation · 342 Total Reviews (4.92 / 5.0 Average)</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-search">
+          <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+          <input type="text" class="admin-search-input" placeholder="Search reviews by keyword, customer, tour...">
+        </div>
+
+        <div class="admin-topbar-right">
+          <span class="status-badge badge-confirmed"><i class="fa-solid fa-star"></i> 4.92 ★ Overall Rating</span>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <!-- Page Header -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-award"></i> Reputation &amp; Trust
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              Traveler Feedback Ledger
+            </h2>
+            <p class="admin-section-subtitle">Review, moderate, and publish verified client testimonials across luxury itineraries.</p>
+          </div>
+          <div class="admin-header-actions">
+            <span class="status-badge badge-confirmed">310 Five-Star Ratings</span>
+          </div>
+        </div>
+
+        <!-- Filter Card -->
+        <section class="filter-card">
+          <div class="filter-grid" style="grid-template-columns: 2fr 1fr 1fr auto;">
+            <div class="filter-item">
+              <label class="filter-label">Search Review Content</label>
+              <input type="text" class="filter-input" placeholder="Search by customer name or keywords...">
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Star Rating</label>
+              <select class="filter-select">
+                <option value="">All Ratings</option>
+                <option value="5">★★★★★ (5 Stars)</option>
+                <option value="4">★★★★☆ (4 Stars)</option>
+                <option value="3">★★★☆☆ (3 Stars)</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Moderation Status</label>
+              <select class="filter-select">
+                <option value="">All Statuses</option>
+                <option value="published">Published</option>
+                <option value="pending">Pending Review</option>
+                <option value="flagged">Flagged</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <a href="reviews.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-filter"></i> Filter</a>
+              <a href="reviews.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-left"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reviews Table -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Verified Reviews</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">Showing recent client reviews from verified voyages</span>
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Review ID</th>
+                  <th>Customer</th>
+                  <th>Package Reviewed</th>
+                  <th>Rating</th>
+                  <th>Review Excerpt</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#REV-342</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/profile.jpg" alt="Alexander Wright" class="table-user-avatar">
+                      <span class="table-title-bold">Alexander Wright</span>
+                    </div>
+                  </td>
+                  <td>Maldives Ultra-Luxury Overwater Escape</td>
+                  <td><span style="color: #F59E0B; font-weight: 800;">★★★★★</span></td>
+                  <td>
+                    <p style="max-width: 300px; font-size: 0.8rem; color: var(--admin-text-muted); line-height: 1.4; white-space: normal;">
+                      "Unforgettable stay at Le Meurice Paris · Bespoke concierge service was world-class and effortless!"
+                    </p>
+                  </td>
+                  <td>Oct 20, 2026</td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Published</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-review-modal" class="action-btn" title="View Review"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#delete-review-modal" class="action-btn btn-delete" title="Delete Review"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 2 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#REV-341</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Sophia Chen" class="table-user-avatar">
+                      <span class="table-title-bold">Sophia Chen</span>
+                    </div>
+                  </td>
+                  <td>Swiss Alps &amp; Glacier Express Grandeur</td>
+                  <td><span style="color: #F59E0B; font-weight: 800;">★★★★★</span></td>
+                  <td>
+                    <p style="max-width: 300px; font-size: 0.8rem; color: var(--admin-text-muted); line-height: 1.4; white-space: normal;">
+                      "The Glacier Express ride was majestic. Snow conditions in Zermatt were picture-perfect!"
+                    </p>
+                  </td>
+                  <td>Oct 14, 2026</td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Published</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-review-modal" class="action-btn" title="View Review"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#delete-review-modal" class="action-btn btn-delete" title="Delete Review"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 3 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#REV-340</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="David Miller" class="table-user-avatar">
+                      <span class="table-title-bold">David Miller</span>
+                    </div>
+                  </td>
+                  <td>Paris Romance &amp; Haute Culture Experience</td>
+                  <td><span style="color: #F59E0B; font-weight: 800;">★★★★★</span></td>
+                  <td>
+                    <p style="max-width: 300px; font-size: 0.8rem; color: var(--admin-text-muted); line-height: 1.4; white-space: normal;">
+                      "Private after-hours Louvre access was the highlight of our European vacation. Highly recommended."
+                    </p>
+                  </td>
+                  <td>Sep 28, 2026</td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Published</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-review-modal" class="action-btn" title="View Review"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#delete-review-modal" class="action-btn btn-delete" title="Delete Review"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 4 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#REV-339</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer3.jpg" alt="Elena Rostova" class="table-user-avatar">
+                      <span class="table-title-bold">Elena Rostova</span>
+                    </div>
+                  </td>
+                  <td>Bali Ubud Wellness &amp; Coastal Retreat</td>
+                  <td><span style="color: #F59E0B; font-weight: 800;">★★★★☆</span></td>
+                  <td>
+                    <p style="max-width: 300px; font-size: 0.8rem; color: var(--admin-text-muted); line-height: 1.4; white-space: normal;">
+                      "The pool villa in Ubud was transcendent. Seaplane transfer had minor delay, but service was impeccable."
+                    </p>
+                  </td>
+                  <td>Sep 12, 2026</td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending Review</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-review-modal" class="action-btn" title="View Review"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#delete-review-modal" class="action-btn btn-delete" title="Delete Review"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Pure CSS Dialogs for Review -->
+  <div id="view-review-modal" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-star" style="color: #F59E0B;"></i> Review Details</h3>
+        <a href="reviews.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-size: 1.1rem; color: #102A43;">Alexander Wright</strong>
+          <span style="color: #F59E0B; font-weight: 800;">★★★★★ 5.0 Rating</span>
+        </div>
+        <div style="font-size: 0.8rem; color: #627D98;">Tour: Maldives Ultra-Luxury Overwater Escape · Verified Booking #ORD-9821</div>
+        <p style="font-size: 0.9rem; line-height: 1.6; color: #263238; background: #F8FAFC; padding: 1rem; border-radius: 8px; border: 1px solid #E2E8F0;">
+          "Unforgettable stay in North Malé Atoll! The private seaplane transfer was seamless, our overwater bungalow offered surreal sunset lagoon views, and the bespoke culinary service exceeded all expectations."
+        </p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="reviews.html" class="btn btn-outline btn-sm">Close</a>
+        <a href="reviews.html" class="btn btn-success btn-sm"><i class="fa-solid fa-circle-check"></i> Approve &amp; Publish</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="delete-review-modal" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-trash-can" style="color: #E53E3E;"></i> Remove Review</h3>
+        <a href="reviews.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-danger-icon"><i class="fa-solid fa-trash-can"></i></div>
+        <p>Delete this customer review from public displays?</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="reviews.html" class="btn btn-outline btn-sm">Cancel</a>
+        <a href="reviews.html" class="btn btn-danger btn-sm">Confirm Deletion</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

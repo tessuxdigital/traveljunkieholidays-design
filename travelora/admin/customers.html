@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <!-- Active Link -->
+        <a href="customers.html" class="admin-nav-link active"><i class="fa-solid fa-users"></i><span>Customers</span><span class="admin-nav-badge badge-info-nav">1.4k</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Customer Management</h1>
+            <span class="admin-breadcrumb-sub">Global Travelers Directory · 1,420 Registered Members</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-search">
+          <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+          <input type="text" class="admin-search-input" placeholder="Search customer by name, email, phone, ID...">
+        </div>
+
+        <div class="admin-topbar-right">
+          <span class="status-badge badge-confirmed"><i class="fa-solid fa-crown"></i> 240 VIP Tier Members</span>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- Page Header -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-user-group"></i> Traveler Database
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              Client Profiles &amp; Lifetime Value
+            </h2>
+            <p class="admin-section-subtitle">Inspect customer itineraries, total bookings, spending volumes, and verification statuses.</p>
+          </div>
+          <div class="admin-header-actions">
+            <a href="customer-details.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-user-check"></i> Featured VIP Profile
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter Card -->
+        <section class="filter-card">
+          <div class="filter-grid" style="grid-template-columns: 2fr 1fr 1fr auto;">
+            <div class="filter-item">
+              <label class="filter-label">Search Customer</label>
+              <input type="text" class="filter-input" placeholder="Name, Email, or Phone number...">
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Membership Tier</label>
+              <select class="filter-select">
+                <option value="">All Tiers</option>
+                <option value="elite">VIP Elite Voyager</option>
+                <option value="platinum">Platinum Explorer</option>
+                <option value="gold">Gold Member</option>
+                <option value="standard">Standard Member</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Sort By</label>
+              <select class="filter-select">
+                <option value="spending">Highest Spending</option>
+                <option value="bookings">Most Bookings</option>
+                <option value="newest">Recently Registered</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <a href="customers.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-magnifying-glass"></i> Search</a>
+              <a href="customers.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-left"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Customers Table -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Registered Travelers</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">Showing top 7 travelers ordered by loyalty score</span>
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Customer ID</th>
+                  <th>Customer Profile</th>
+                  <th>Email Address</th>
+                  <th>Phone Number</th>
+                  <th>Total Bookings</th>
+                  <th>Total Spending</th>
+                  <th>Registration Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1. Alexander Wright -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-701</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/profile.jpg" alt="Alexander Wright" class="table-user-avatar" style="border: 2px solid var(--admin-accent);">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Alexander Wright</span>
+                        <span class="table-sub-text" style="color: var(--admin-accent); font-weight: 700;">VIP Elite Voyager</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>alexander.wright@travelora.com</td>
+                  <td>+1 (555) 739-2041</td>
+                  <td><strong style="color: var(--admin-primary);">15 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$48,250.00</strong></td>
+                  <td>Feb 12, 2023</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 2. Sophia Chen -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-702</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Sophia Chen" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Sophia Chen</span>
+                        <span class="table-sub-text" style="color: var(--admin-secondary); font-weight: 700;">Platinum Tier</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>sophia.chen@example.com</td>
+                  <td>+1 (555) 892-1140</td>
+                  <td><strong style="color: var(--admin-primary);">8 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$29,400.00</strong></td>
+                  <td>Jun 20, 2024</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 3. David Miller -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-703</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="David Miller" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">David Miller</span>
+                        <span class="table-sub-text" style="color: var(--admin-secondary); font-weight: 700;">Gold Tier</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>d.miller@londoncorp.co.uk</td>
+                  <td>+44 20 7946 0912</td>
+                  <td><strong style="color: var(--admin-primary);">5 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$18,750.00</strong></td>
+                  <td>Jan 15, 2024</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 4. Elena Rostova -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-704</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer3.jpg" alt="Elena Rostova" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Elena Rostova</span>
+                        <span class="table-sub-text" style="color: var(--admin-secondary); font-weight: 700;">Platinum Tier</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>elena.rostova@travelmail.de</td>
+                  <td>+49 30 1234567</td>
+                  <td><strong style="color: var(--admin-primary);">6 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$22,100.00</strong></td>
+                  <td>Nov 08, 2023</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 5. James Wilson -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-705</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer4.jpg" alt="James Wilson" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">James Wilson</span>
+                        <span class="table-sub-text">Standard Member</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>j.wilson@sydney.com.au</td>
+                  <td>+61 2 9876 5432</td>
+                  <td><strong style="color: var(--admin-primary);">4 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$14,900.00</strong></td>
+                  <td>Aug 29, 2024</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 6. Isabella Martinez -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-706</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Isabella Martinez" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Isabella Martinez</span>
+                        <span class="table-sub-text" style="color: var(--admin-accent); font-weight: 700;">VIP Elite Voyager</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>isabella.m@madrid.es</td>
+                  <td>+34 91 123 4567</td>
+                  <td><strong style="color: var(--admin-primary);">9 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$34,800.00</strong></td>
+                  <td>Mar 10, 2023</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+
+                <!-- 7. Liam O'Connor -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#CUST-707</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="Liam O'Connor" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Liam O'Connor</span>
+                        <span class="table-sub-text">Standard Member</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>liam.oc@dublin.ie</td>
+                  <td>+353 1 496 0000</td>
+                  <td><strong style="color: var(--admin-primary);">3 Bookings</strong></td>
+                  <td><strong style="color: #2E9D68; font-family: var(--font-heading); font-size: 0.95rem;">$11,200.00</strong></td>
+                  <td>Sep 04, 2025</td>
+                  <td>
+                    <a href="customer-details.html" class="action-pill-btn"><i class="fa-solid fa-id-card"></i> View Profile</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

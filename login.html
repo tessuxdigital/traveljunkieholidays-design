@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login – Travel Junkie Holidays Member Portal</title>
+  <!-- Pure CSS Stylesheets - Zero JavaScript -->
+  <link rel="stylesheet" href="css/style.css?v=iv-svg-v9">
+  <link rel="stylesheet" href="css/animations.css?v=like-pkg-v1">
+  <link rel="stylesheet" href="css/responsive.css?v=iv-svg-v9">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <!-- LEFT: INSPIRATIONAL TRAVEL VISUAL -->
+    <div class="auth-visual-side">
+      <div class="auth-visual-brand">
+        <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+      </div>
+
+      <div class="auth-quote-box animate-slide-up">
+        <div style="color: var(--accent-color); font-size: 2.2rem; margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <p class="auth-quote-text">
+          "Travel makes one modest. You see what a tiny place you occupy in the world."
+        </p>
+        <div class="auth-quote-author">— Gustave Flaubert</div>
+      </div>
+
+      <div class="auth-perks-list">
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Bank-Grade 256-Bit Security</span>
+        </div>
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-gift"></i>
+          <span>Member-Only Privileges &amp; Deals</span>
+        </div>
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-headset"></i>
+          <span>24/7 Dedicated Travel Concierge</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: LOGIN FORM CONTAINER -->
+    <div class="auth-form-side">
+      <div class="auth-form-container animate-fade-in">
+        <div style="margin-bottom: 1.5rem;">
+          <a href="index.html" style="font-size: 0.88rem; font-weight: 600; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Homepage
+          </a>
+        </div>
+
+        <div class="auth-form-header">
+          <h1 class="auth-form-title">Welcome Back</h1>
+          <p class="auth-form-subtitle">Enter your credentials to access your Travel Junkie Holidays bookings &amp; bespoke itineraries.</p>
+        </div>
+
+        <!-- Social Login Buttons -->
+        <div class="social-login-grid">
+          <button type="button" class="social-auth-btn">
+            <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+            <span>Google</span>
+          </button>
+          <button type="button" class="social-auth-btn">
+            <i class="fa-brands fa-apple" style="color: #000000;"></i>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <div class="auth-divider">
+          <span>or sign in with email</span>
+        </div>
+
+        <!-- Login Form -->
+        <form action="index.html" method="get" autocomplete="off">
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="login-email" class="form-label">Email Address *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-regular fa-envelope auth-input-icon"></i>
+              <input type="email" id="login-email" name="login_user_email" class="auth-input-field" placeholder="your.name@example.com" autocomplete="off" value="" required>
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="login-password" class="form-label">Password *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-lock auth-input-icon"></i>
+              <input type="password" id="login-password" name="login_user_password" class="auth-input-field" placeholder="••••••••••••" autocomplete="new-password" value="" required>
+            </div>
+          </div>
+
+          <!-- Remember Me & Forgot Password Row -->
+          <div class="form-row-between">
+            <label class="checkbox-label">
+              <input type="checkbox" name="remember">
+              <span>Remember me</span>
+            </label>
+            <a href="contact.html?subject=Account+Recovery" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-accent btn-full btn-lg" style="margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <span>Sign In to Account</span>
+          </button>
+        </form>
+
+        <!-- Create Account Link -->
+        <div class="auth-footer-prompt">
+          Don't have an account yet? <a href="register.html">Create free account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

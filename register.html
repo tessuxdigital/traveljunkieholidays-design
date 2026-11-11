@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register – Travel Junkie Holidays Member Club</title>
+  <!-- Pure CSS Stylesheets - Zero JavaScript -->
+  <link rel="stylesheet" href="css/style.css?v=iv-svg-v9">
+  <link rel="stylesheet" href="css/animations.css?v=like-pkg-v1">
+  <link rel="stylesheet" href="css/responsive.css?v=iv-svg-v9">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+
+  <div class="auth-page-wrapper">
+    <!-- LEFT: INSPIRATIONAL TRAVEL VISUAL -->
+    <div class="auth-visual-side" style="background-image: var(--bg-hero-overlay), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1400&q=80');">
+      <div class="auth-visual-brand">
+        <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+      </div>
+
+      <div class="auth-quote-box auth-quote-box-register animate-slide-up">
+        <div style="color: var(--accent-color); font-size: 2.2rem; margin-bottom: 0.5rem;">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+        <p class="auth-quote-text">
+          "The world is a book and those who do not travel read only one page."
+        </p>
+        <div class="auth-quote-author">— Saint Augustine</div>
+      </div>
+
+      <div class="auth-perks-list">
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-tag"></i>
+          <span>Instant $150 Welcome Credit</span>
+        </div>
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-bell-concierge"></i>
+          <span>VIP Early Access to Flash Sales</span>
+        </div>
+        <div class="auth-perk-item">
+          <i class="fa-solid fa-hotel"></i>
+          <span>Complimentary Room Upgrades</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: REGISTRATION FORM CONTAINER -->
+    <div class="auth-form-side">
+      <div class="auth-form-container animate-fade-in">
+        <div style="margin-bottom: 1.5rem;">
+          <a href="index.html" style="font-size: 0.88rem; font-weight: 600; color: var(--text-muted); display: inline-flex; align-items: center; gap: 0.4rem;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Homepage
+          </a>
+        </div>
+
+        <div class="auth-form-header">
+          <h1 class="auth-form-title">Join Travel Junkie Holidays</h1>
+          <p class="auth-form-subtitle">Create an account to unlock member discounts, bespoke itineraries &amp; VIP perks.</p>
+        </div>
+
+        <!-- Social Registration Buttons -->
+        <div class="social-login-grid">
+          <button type="button" class="social-auth-btn">
+            <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+            <span>Google</span>
+          </button>
+          <button type="button" class="social-auth-btn">
+            <i class="fa-brands fa-apple" style="color: #000000;"></i>
+            <span>Apple</span>
+          </button>
+        </div>
+
+        <div class="auth-divider">
+          <span>or register with email</span>
+        </div>
+
+        <!-- Registration Form -->
+        <form action="login.html" method="get" autocomplete="off">
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="reg-name" class="form-label">Full Name *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-regular fa-user auth-input-icon"></i>
+              <input type="text" id="reg-name" name="fullname" class="auth-input-field" placeholder="e.g. Eleanor Vance" autocomplete="off" required>
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label for="reg-email" class="form-label">Email Address *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-regular fa-envelope auth-input-icon"></i>
+              <input type="email" id="reg-email" name="reg_user_email" class="auth-input-field" placeholder="eleanor@example.com" autocomplete="off" required>
+            </div>
+          </div>
+
+          <!-- Phone Number Field -->
+          <div class="form-group">
+            <label for="reg-phone" class="form-label">Phone Number *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-phone auth-input-icon"></i>
+              <input type="tel" id="reg-phone" name="phone" class="auth-input-field" placeholder="+1 (800) 555-8728" required>
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label for="reg-password" class="form-label">Password *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-lock auth-input-icon"></i>
+              <input type="password" id="reg-password" name="password" class="auth-input-field" placeholder="At least 8 characters" minlength="8" required>
+            </div>
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="form-group">
+            <label for="reg-confirm-password" class="form-label">Confirm Password *</label>
+            <div class="auth-input-wrapper">
+              <i class="fa-solid fa-shield-check auth-input-icon"></i>
+              <input type="password" id="reg-confirm-password" name="confirm_password" class="auth-input-field" placeholder="Re-enter password" minlength="8" required>
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label class="checkbox-label" style="align-items: flex-start; font-size: 0.85rem;">
+              <input type="checkbox" name="terms" required style="margin-top: 3px;">
+              <span>I agree to Travel Junkie Holidays’s <a href="#" style="color: var(--secondary-dark); text-decoration: underline;">Terms of Service</a> and acknowledge the <a href="#" style="color: var(--secondary-dark); text-decoration: underline;">Privacy Policy</a>.</span>
+            </label>
+          </div>
+
+          <!-- Register Button -->
+          <button type="submit" class="btn btn-accent btn-full btn-lg" style="margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Create Travel Junkie Holidays Account</span>
+          </button>
+        </form>
+
+        <!-- Login Link -->
+        <div class="auth-footer-prompt">
+          Already have an account? <a href="login.html">Sign in here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

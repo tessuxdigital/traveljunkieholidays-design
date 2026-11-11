@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Settings – Travel Junkie Holidays Control Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <!-- Active Link -->
+        <a href="settings.html" class="admin-nav-link active"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Admin Settings</h1>
+            <span class="admin-breadcrumb-sub">Platform Preferences, Currency Rules, Taxes &amp; Security</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- Settings Form Card -->
+        <form action="settings.html" method="get" class="admin-form-card">
+
+          <!-- Section 1: General Platform Settings -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-globe"></i> General Platform Settings</h3>
+              <span class="form-section-desc">Brand configurations and customer portal defaults</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Platform Name</label>
+                <input type="text" class="form-input" value="Travel Junkie Holidays Worldwide Travel &amp; Tourism" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Support Email Address</label>
+                <input type="email" class="form-input" value="concierge@traveljunkieholidays.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Base Operating Currency</label>
+                <select class="form-select">
+                  <option value="usd" selected>USD ($) – US Dollar</option>
+                  <option value="eur">EUR (€) – Euro</option>
+                  <option value="gbp">GBP (£) – British Pound</option>
+                  <option value="chf">CHF – Swiss Franc</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Platform Timezone</label>
+                <select class="form-select">
+                  <option value="est" selected>UTC-05:00 Eastern Time (US &amp; Canada)</option>
+                  <option value="utc">UTC+00:00 Greenwich Mean Time</option>
+                  <option value="cet">UTC+01:00 Central European Time</option>
+                  <option value="jst">UTC+09:00 Japan Standard Time</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: Booking & Tax Policy -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-percent"></i> Financial &amp; Booking Rules</h3>
+              <span class="form-section-desc">Tax rates, deposit percentages, and cancellation cutoff policies</span>
+            </div>
+
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label class="form-label">Default Tourism Tax Rate (%)</label>
+                <div class="input-group">
+                  <input type="number" class="form-input has-addon-right" value="12" min="0" max="100">
+                  <span class="input-addon-right">%</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Minimum Reservation Deposit (%)</label>
+                <div class="input-group">
+                  <input type="number" class="form-input has-addon-right" value="30" min="10" max="100">
+                  <span class="input-addon-right">%</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Free Cancellation Window (Hours)</label>
+                <div class="input-group">
+                  <input type="number" class="form-input has-addon-right" value="48" min="0">
+                  <span class="input-addon-right">Hours</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Security & Admin Credentials -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-shield-halved"></i> Administrator Security</h3>
+              <span class="form-section-desc">Manage administrative access keys and security protections</span>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label">Current Admin Password</label>
+                <input type="password" class="form-input" placeholder="••••••••••••">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">New Admin Password</label>
+                <input type="password" class="form-input" placeholder="••••••••••••">
+              </div>
+
+              <div class="form-group col-span-2">
+                <div style="background: #FAFCFE; border: 1.5px solid var(--admin-border); border-radius: var(--radius-md); padding: 1rem; display: flex; align-items: center; justify-content: space-between;">
+                  <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <i class="fa-solid fa-mobile-screen-button" style="font-size: 1.4rem; color: var(--admin-secondary);"></i>
+                    <div>
+                      <strong style="color: var(--admin-primary); font-size: 0.9rem;">Two-Factor Authentication (2FA)</strong>
+                      <div style="font-size: 0.76rem; color: var(--admin-text-muted);">Enforce authenticator app security for all administrative logins.</div>
+                    </div>
+                  </div>
+                  <span class="status-badge badge-confirmed"><i class="fa-solid fa-shield-check"></i> Enabled (Active)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 4: Email Notifications -->
+          <div class="admin-form-section">
+            <div class="form-section-title-box">
+              <h3 class="form-section-title"><i class="fa-solid fa-bell"></i> System Notifications</h3>
+              <span class="form-section-desc">Select automated event alerts sent to administrative staff</span>
+            </div>
+
+            <div class="checkbox-pills-grid">
+              <label class="checkbox-pill-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-pill-label"><i class="fa-solid fa-circle-check"></i> New Order Placed Alerts</span>
+              </label>
+              <label class="checkbox-pill-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-pill-label"><i class="fa-solid fa-circle-check"></i> Payment Captured Confirmations</span>
+              </label>
+              <label class="checkbox-pill-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-pill-label"><i class="fa-solid fa-circle-check"></i> Booking Cancellation Notices</span>
+              </label>
+              <label class="checkbox-pill-item">
+                <input type="checkbox" checked>
+                <span class="checkbox-pill-label"><i class="fa-solid fa-circle-check"></i> Daily Operations Summary Digest</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="admin-form-actions">
+            <a href="admin-dashboard.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa-solid fa-floppy-disk"></i> Save Settings
+            </button>
+          </div>
+
+        </form>
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

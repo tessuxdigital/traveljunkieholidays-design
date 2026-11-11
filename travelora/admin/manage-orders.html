@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Orders &amp; Booking Management – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ======================================================================
+         ADMIN SIDEBAR
+         ====================================================================== -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <!-- Active Link -->
+        <a href="manage-orders.html" class="admin-nav-link active">
+          <i class="fa-solid fa-receipt"></i>
+          <span>All Orders</span>
+          <span class="admin-nav-badge badge-info-nav">10</span>
+        </a>
+        <label for="filter-confirmed" class="admin-nav-link" style="cursor: pointer;">
+          <i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i>
+          <span>Confirmed Orders</span>
+          <span class="admin-nav-badge" style="background:#2E9D68; color:#fff;">4</span>
+        </label>
+        <label for="filter-pending" class="admin-nav-link" style="cursor: pointer;">
+          <i class="fa-solid fa-clock" style="color: #E9A23B;"></i>
+          <span>Pending Orders</span>
+          <span class="admin-nav-badge badge-pending-nav">3</span>
+        </label>
+        <label for="filter-cancelled" class="admin-nav-link" style="cursor: pointer;">
+          <i class="fa-solid fa-ban" style="color: #E53E3E;"></i>
+          <span>Cancelled Orders</span>
+          <span class="admin-nav-badge" style="background:#E53E3E; color:#fff;">1</span>
+        </label>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">All Customer Orders</h1>
+            <span class="admin-breadcrumb-sub">Central Booking Ledger · Categorized Status Management</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-search">
+          <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+          <input type="text" class="admin-search-input" placeholder="Search orders by ID, traveler, or destination...">
+        </div>
+
+        <div class="admin-topbar-right">
+          <a href="manage-orders.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate"></i> Reset View</a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <!-- ==================================================================
+             PURE CSS CATEGORY FILTER CONTROLLERS (RADIO BUTTONS)
+             ================================================================== -->
+        <input type="radio" name="order-status-filter" id="filter-all" class="filter-radio-input" checked>
+        <input type="radio" name="order-status-filter" id="filter-pending" class="filter-radio-input">
+        <input type="radio" name="order-status-filter" id="filter-confirmed" class="filter-radio-input">
+        <input type="radio" name="order-status-filter" id="filter-cancelled" class="filter-radio-input">
+        <input type="radio" name="order-status-filter" id="filter-completed" class="filter-radio-input">
+
+        <!-- Page Header -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-clipboard-list"></i> Order Operations
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              All Orders Management
+            </h2>
+            <p class="admin-section-subtitle">Select a status filter tab to instantly view only orders matching that category.</p>
+          </div>
+          <div class="admin-header-actions">
+            <label for="filter-pending" class="status-badge badge-pending" style="cursor: pointer;">
+              <i class="fa-solid fa-clock"></i> 3 Pending
+            </label>
+            <label for="filter-confirmed" class="status-badge badge-confirmed" style="cursor: pointer;">
+              <i class="fa-solid fa-circle-check"></i> 4 Confirmed
+            </label>
+            <label for="filter-cancelled" class="status-badge badge-cancelled" style="cursor: pointer;">
+              <i class="fa-solid fa-ban"></i> 1 Cancelled
+            </label>
+            <label for="filter-completed" class="status-badge badge-completed" style="cursor: pointer;">
+              <i class="fa-solid fa-flag-checkered"></i> 2 Completed
+            </label>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             2. ORDER FILTER SECTION (ABOVE ALL ORDERS TABLE)
+             ================================================================== -->
+        <section class="filter-card">
+          <!-- 5 Status Filter Tabs (Pure CSS Radio Button Driven) -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem; border-bottom: 1px solid var(--admin-border-subtle); padding-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+              <span style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: var(--admin-primary); letter-spacing: 0.8px;">
+                <i class="fa-solid fa-filter" style="color: var(--admin-secondary);"></i> Filter by Booking Status:
+              </span>
+              <span style="font-size: 0.75rem; color: var(--admin-text-muted);">
+                <i class="fa-solid fa-circle-info"></i> Click any tab below to filter table rows in real-time
+              </span>
+            </div>
+
+            <div class="filter-tabs-row">
+              <!-- 1. All Orders -->
+              <label for="filter-all" class="filter-tab-pill tab-all">
+                <i class="fa-solid fa-list-check"></i>
+                <span>All Orders</span>
+                <span class="tab-count">10</span>
+              </label>
+
+              <!-- 2. Pending Orders -->
+              <label for="filter-pending" class="filter-tab-pill tab-pending">
+                <i class="fa-solid fa-clock" style="color: #E9A23B;"></i>
+                <span>Pending Orders</span>
+                <span class="tab-count count-pending">3</span>
+              </label>
+
+              <!-- 3. Confirmed Orders -->
+              <label for="filter-confirmed" class="filter-tab-pill tab-confirmed">
+                <i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i>
+                <span>Confirmed Orders</span>
+                <span class="tab-count count-confirmed">4</span>
+              </label>
+
+              <!-- 4. Cancelled Orders -->
+              <label for="filter-cancelled" class="filter-tab-pill tab-cancelled">
+                <i class="fa-solid fa-ban" style="color: #E53E3E;"></i>
+                <span>Cancelled Orders</span>
+                <span class="tab-count count-cancelled">1</span>
+              </label>
+
+              <!-- 5. Completed Orders -->
+              <label for="filter-completed" class="filter-tab-pill tab-completed">
+                <i class="fa-solid fa-flag-checkered" style="color: #247BA0;"></i>
+                <span>Completed Orders</span>
+                <span class="tab-count count-completed">2</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Secondary Visual Search & Filters -->
+          <div class="filter-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr 1fr auto; padding-top: 0.25rem;">
+            <!-- Search by Order ID -->
+            <div class="filter-item">
+              <label class="filter-label">Search by Order ID</label>
+              <input type="text" class="filter-input" placeholder="e.g. #ORD-9821...">
+            </div>
+
+            <!-- Search by Customer Name -->
+            <div class="filter-item">
+              <label class="filter-label">Search Customer Name</label>
+              <input type="text" class="filter-input" placeholder="e.g. Alexander, Sophia...">
+            </div>
+
+            <!-- Filter by Destination -->
+            <div class="filter-item">
+              <label class="filter-label">Filter Destination</label>
+              <select class="filter-select">
+                <option value="">All Destinations</option>
+                <option value="maldives">Maldives</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="paris">Paris, France</option>
+                <option value="bali">Bali, Indonesia</option>
+                <option value="japan">Kyoto, Japan</option>
+                <option value="italy">Amalfi Coast, Italy</option>
+                <option value="dubai">Dubai, UAE</option>
+                <option value="thailand">Phuket, Thailand</option>
+                <option value="greece">Santorini, Greece</option>
+              </select>
+            </div>
+
+            <!-- Filter by Payment Status -->
+            <div class="filter-item">
+              <label class="filter-label">Payment Status</label>
+              <select class="filter-select">
+                <option value="">All Payments</option>
+                <option value="paid">Paid in Full</option>
+                <option value="deposit">Deposit Paid</option>
+                <option value="pending">Payment Pending</option>
+                <option value="refunded">Refunded</option>
+              </select>
+            </div>
+
+            <!-- Filter by Booking Date -->
+            <div class="filter-item">
+              <label class="filter-label">Booking Date</label>
+              <input type="date" class="filter-input" value="2026-09-18">
+            </div>
+
+            <!-- Actions -->
+            <div class="filter-actions">
+              <button type="button" class="btn btn-primary btn-sm"><i class="fa-solid fa-magnifying-glass"></i> Filter</button>
+              <label for="filter-all" class="btn btn-outline btn-sm" title="Reset All Filters" style="cursor: pointer;">
+                <i class="fa-solid fa-rotate-left"></i>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             1. ALL ORDERS TABLE (12 REQUIRED COLUMNS)
+             ================================================================== -->
+        <section class="admin-card orders-table-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Order Records Ledger</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">
+                Displaying 10 sample bookings across Confirmed, Pending, Cancelled, and Completed statuses
+              </span>
+            </div>
+            <div style="font-size: 0.8rem; font-weight: 700; color: var(--admin-primary);">
+              Showing active bookings
+            </div>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer Name</th>
+                  <th>Email</th>
+                  <th>Phone Number</th>
+                  <th>Package Name</th>
+                  <th>Destination</th>
+                  <th>Booking Date</th>
+                  <th>Travel Date</th>
+                  <th>Total Amount</th>
+                  <th>Payment Status</th>
+                  <th>Booking Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <!-- ORDER 1: Confirmed (Maldives) -->
+                <tr class="order-row row-confirmed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9821</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/profile.jpg" alt="Alexander Wright" class="table-user-avatar">
+                      <span class="table-title-bold">Alexander Wright</span>
+                    </div>
+                  </td>
+                  <td>alexander.wright@travelora.com</td>
+                  <td>+1 (555) 739-2041</td>
+                  <td>
+                    <span class="table-title-bold">Maldives Ultra-Luxury Overwater Escape</span>
+                  </td>
+                  <td>Maldives, South Asia</td>
+                  <td>Sep 18, 2026</td>
+                  <td>Oct 24, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$3,450.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <!-- Change Status Dropdown -->
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 2: Pending (Switzerland) -->
+                <tr class="order-row row-pending">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9820</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Sophia Chen" class="table-user-avatar">
+                      <span class="table-title-bold">Sophia Chen</span>
+                    </div>
+                  </td>
+                  <td>sophia.chen@example.com</td>
+                  <td>+1 (555) 892-1140</td>
+                  <td>
+                    <span class="table-title-bold">Zermatt &amp; Glacier Express Winter Grandeur</span>
+                  </td>
+                  <td>Switzerland, Europe</td>
+                  <td>Aug 14, 2026</td>
+                  <td>Dec 12, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$4,200.00</strong></td>
+                  <td><span class="status-badge badge-pending">Deposit ($1.2k)</span></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 3: Confirmed (Paris) -->
+                <tr class="order-row row-confirmed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9819</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="David Miller" class="table-user-avatar">
+                      <span class="table-title-bold">David Miller</span>
+                    </div>
+                  </td>
+                  <td>d.miller@londoncorp.co.uk</td>
+                  <td>+44 20 7946 0912</td>
+                  <td>
+                    <span class="table-title-bold">Paris Romance &amp; Haute Culture Experience</span>
+                  </td>
+                  <td>Paris, France</td>
+                  <td>Oct 02, 2026</td>
+                  <td>Jan 15, 2027</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,850.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 4: Confirmed (Bali) -->
+                <tr class="order-row row-confirmed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9818</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer3.jpg" alt="Elena Rostova" class="table-user-avatar">
+                      <span class="table-title-bold">Elena Rostova</span>
+                    </div>
+                  </td>
+                  <td>elena.rostova@travelmail.de</td>
+                  <td>+49 30 1234567</td>
+                  <td>
+                    <span class="table-title-bold">Bali Ubud Wellness &amp; Coastal Retreat</span>
+                  </td>
+                  <td>Bali, Indonesia</td>
+                  <td>Jul 29, 2026</td>
+                  <td>Mar 04, 2027</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$2,780.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 5: Cancelled (Kyoto) -->
+                <tr class="order-row row-cancelled">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9817</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer4.jpg" alt="James Wilson" class="table-user-avatar">
+                      <span class="table-title-bold">James Wilson</span>
+                    </div>
+                  </td>
+                  <td>j.wilson@sydney.com.au</td>
+                  <td>+61 2 9876 5432</td>
+                  <td>
+                    <span class="table-title-bold">Kyoto Imperial Autumn Blossom Odyssey</span>
+                  </td>
+                  <td>Japan, East Asia</td>
+                  <td>Jun 10, 2026</td>
+                  <td>Sep 05, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$2,490.00</strong></td>
+                  <td><span class="status-badge badge-cancelled">Refunded</span></td>
+                  <td><span class="status-badge badge-cancelled"><i class="fa-solid fa-ban"></i> Cancelled</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 6: Completed (Italy) -->
+                <tr class="order-row row-completed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9816</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Isabella Martinez" class="table-user-avatar">
+                      <span class="table-title-bold">Isabella Martinez</span>
+                    </div>
+                  </td>
+                  <td>isabella.m@madrid.es</td>
+                  <td>+34 91 123 4567</td>
+                  <td>
+                    <span class="table-title-bold">Amalfi Coast &amp; Tuscan Vineyards</span>
+                  </td>
+                  <td>Italy, Europe</td>
+                  <td>May 04, 2026</td>
+                  <td>Jul 12, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$3,190.00</strong></td>
+                  <td><span class="status-badge badge-completed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-completed"><i class="fa-solid fa-flag-checkered"></i> Completed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 7: Pending (Dubai) -->
+                <tr class="order-row row-pending">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9815</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="Liam O'Connor" class="table-user-avatar">
+                      <span class="table-title-bold">Liam O'Connor</span>
+                    </div>
+                  </td>
+                  <td>liam.oc@dublin.ie</td>
+                  <td>+353 1 496 0000</td>
+                  <td>
+                    <span class="table-title-bold">Burj Skyline &amp; Desert Dunes Safari</span>
+                  </td>
+                  <td>Dubai, UAE</td>
+                  <td>Oct 10, 2026</td>
+                  <td>Nov 22, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,980.00</strong></td>
+                  <td><span class="status-badge badge-pending">Card Pending</span></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 8: Confirmed (Thailand) -->
+                <tr class="order-row row-confirmed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9814</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer3.jpg" alt="Amara Okafor" class="table-user-avatar">
+                      <span class="table-title-bold">Amara Okafor</span>
+                    </div>
+                  </td>
+                  <td>amara.okafor@lagosvoyages.ng</td>
+                  <td>+234 803 123 4567</td>
+                  <td>
+                    <span class="table-title-bold">Phuket Azure Islands &amp; Temples</span>
+                  </td>
+                  <td>Phuket, Thailand</td>
+                  <td>Aug 22, 2026</td>
+                  <td>Nov 15, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,650.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 9: Pending (Swiss Chalet) -->
+                <tr class="order-row row-pending">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9813</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer4.jpg" alt="Marcus Sterling" class="table-user-avatar">
+                      <span class="table-title-bold">Marcus Sterling</span>
+                    </div>
+                  </td>
+                  <td>m.sterling@torontocap.ca</td>
+                  <td>+1 (416) 555-0199</td>
+                  <td>
+                    <span class="table-title-bold">St. Moritz Glacier Luxury Chalet</span>
+                  </td>
+                  <td>Switzerland, Europe</td>
+                  <td>Sep 01, 2026</td>
+                  <td>Dec 20, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$3,800.00</strong></td>
+                  <td><span class="status-badge badge-pending">Deposit Pending</span></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- ORDER 10: Completed (Santorini) -->
+                <tr class="order-row row-completed">
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9812</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Chloe Dupont" class="table-user-avatar">
+                      <span class="table-title-bold">Chloe Dupont</span>
+                    </div>
+                  </td>
+                  <td>chloe.dupont@geneve.ch</td>
+                  <td>+41 22 555 1234</td>
+                  <td>
+                    <span class="table-title-bold">Santorini Sunset Haven &amp; Yacht</span>
+                  </td>
+                  <td>Santorini, Greece</td>
+                  <td>Apr 12, 2026</td>
+                  <td>Jun 18, 2026</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$2,400.00</strong></td>
+                  <td><span class="status-badge badge-completed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-completed"><i class="fa-solid fa-flag-checkered"></i> Completed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#edit-order-modal" class="action-btn btn-edit" title="Edit Order"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <div class="status-dropdown-container">
+                        <button type="button" class="change-status-btn" title="Change Status">
+                          <i class="fa-solid fa-arrows-rotate"></i> Status <i class="fa-solid fa-chevron-down status-chevron"></i>
+                        </button>
+                        <div class="status-menu">
+                          <span class="status-menu-header">Change Status:</span>
+                          <a href="#status-modal-pending" class="status-option option-pending">
+                            <span class="status-dot dot-pending"></span> Pending
+                          </a>
+                          <a href="#status-modal-confirmed" class="status-option option-confirmed">
+                            <span class="status-dot dot-confirmed"></span> Confirmed
+                          </a>
+                          <a href="#status-modal-cancelled" class="status-option option-cancelled">
+                            <span class="status-dot dot-cancelled"></span> Cancelled
+                          </a>
+                          <a href="#status-modal-completed" class="status-option option-completed">
+                            <span class="status-dot dot-completed"></span> Completed
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="order-details.html">Inspect Order #ORD-9821</a>
+          <a href="settings.html">System Settings</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       PURE CSS INTERACTIVE MODALS & DIALOGS (:target ARCHITECTURE)
+       ========================================================================== -->
+
+  <!-- 1. Edit Order Modal -->
+  <div id="edit-order-modal" class="admin-modal-overlay">
+    <div class="admin-modal-dialog" style="max-width: 600px;">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-pen-to-square" style="color: var(--admin-secondary);"></i> Edit Customer Order</h3>
+        <a href="manage-orders.html" class="admin-modal-close">&times;</a>
+      </div>
+      <form action="manage-orders.html" method="get">
+        <div class="admin-modal-body">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label">Order Reference ID</label>
+              <input type="text" class="form-input" value="#ORD-9821" readonly style="background:#F1F5F9; font-family: monospace; font-weight: 700;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Customer Name *</label>
+              <input type="text" class="form-input" value="Alexander Wright" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-input" value="alexander.wright@travelora.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-input" value="+1 (555) 739-2041" required>
+            </div>
+            <div class="form-group col-span-2">
+              <label class="form-label">Travel Package</label>
+              <input type="text" class="form-input" value="Maldives Ultra-Luxury Overwater Escape" readonly style="background:#F1F5F9;">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Travel Date *</label>
+              <input type="date" class="form-input" value="2026-10-24" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Total Amount ($ USD) *</label>
+              <input type="number" class="form-input" value="3450" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Payment Status *</label>
+              <select class="form-select" required>
+                <option value="paid" selected>Paid in Full</option>
+                <option value="deposit">Deposit Paid</option>
+                <option value="pending">Payment Pending</option>
+                <option value="refunded">Refunded</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Booking Status *</label>
+              <select class="form-select" required>
+                <option value="pending">🟠 Pending</option>
+                <option value="confirmed" selected>🟢 Confirmed</option>
+                <option value="cancelled">🔴 Cancelled</option>
+                <option value="completed">🔵 Completed</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="admin-modal-footer">
+          <a href="manage-orders.html" class="btn btn-outline btn-sm">Cancel</a>
+          <button type="submit" class="btn btn-primary btn-sm"><i class="fa-solid fa-floppy-disk"></i> Update Order</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Status Change Confirmation Modals -->
+  <!-- Pending Confirmation -->
+  <div id="status-modal-pending" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i> Change Status to Pending</h3>
+        <a href="manage-orders.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box" style="background: #FFF7EB; color: #E9A23B;"><i class="fa-solid fa-clock"></i></div>
+        <p>Set order booking status to <strong>Pending (Orange)</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This flags the booking for concierge verification and awaits authorization.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="manage-orders.html" class="btn btn-outline btn-sm">Dismiss</a>
+        <a href="manage-orders.html" class="btn btn-accent btn-sm"><i class="fa-solid fa-check"></i> Apply Pending Status</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmed Confirmation -->
+  <div id="status-modal-confirmed" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i> Change Status to Confirmed</h3>
+        <a href="manage-orders.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-confirm-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <p>Set order booking status to <strong>Confirmed (Green)</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This generates verified travel vouchers and confirms accommodations.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="manage-orders.html" class="btn btn-outline btn-sm">Dismiss</a>
+        <a href="manage-orders.html" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i> Apply Confirmed Status</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cancelled Confirmation -->
+  <div id="status-modal-cancelled" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i> Change Status to Cancelled</h3>
+        <a href="manage-orders.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-danger-icon"><i class="fa-solid fa-ban"></i></div>
+        <p>Set order booking status to <strong>Cancelled (Red)</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This releases slots back into inventory and triggers refund processing.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="manage-orders.html" class="btn btn-outline btn-sm">Dismiss</a>
+        <a href="manage-orders.html" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> Apply Cancelled Status</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Completed Confirmation -->
+  <div id="status-modal-completed" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-flag-checkered" style="color: #247BA0;"></i> Change Status to Completed</h3>
+        <a href="manage-orders.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box" style="background: #EBF8FF; color: #247BA0;"><i class="fa-solid fa-flag-checkered"></i></div>
+        <p>Set order booking status to <strong>Completed (Blue)</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This indicates the traveler has completed their trip and triggers loyalty points crediting.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="manage-orders.html" class="btn btn-outline btn-sm">Dismiss</a>
+        <a href="manage-orders.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-check"></i> Apply Completed Status</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

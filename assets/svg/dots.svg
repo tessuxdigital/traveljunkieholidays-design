@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140">
+  <g fill="#247BA0" fill-opacity="0.14">
+    <circle cx="8" cy="8" r="1.6"/>
+    <circle cx="36" cy="8" r="1.6"/>
+    <circle cx="64" cy="8" r="1.6"/>
+    <circle cx="92" cy="8" r="1.6"/>
+    <circle cx="120" cy="8" r="1.6"/>
+    <circle cx="8" cy="36" r="1.6"/>
+    <circle cx="36" cy="36" r="1.6"/>
+    <circle cx="64" cy="36" r="1.6"/>
+    <circle cx="92" cy="36" r="1.6"/>
+    <circle cx="120" cy="36" r="1.6"/>
+    <circle cx="8" cy="64" r="1.6"/>
+    <circle cx="36" cy="64" r="1.6"/>
+    <circle cx="64" cy="64" r="1.6"/>
+    <circle cx="92" cy="64" r="1.6"/>
+    <circle cx="120" cy="64" r="1.6"/>
+    <circle cx="8" cy="92" r="1.6"/>
+    <circle cx="36" cy="92" r="1.6"/>
+    <circle cx="64" cy="92" r="1.6"/>
+    <circle cx="92" cy="92" r="1.6"/>
+    <circle cx="120" cy="92" r="1.6"/>
+    <circle cx="8" cy="120" r="1.6"/>
+    <circle cx="36" cy="120" r="1.6"/>
+    <circle cx="64" cy="120" r="1.6"/>
+    <circle cx="92" cy="120" r="1.6"/>
+    <circle cx="120" cy="120" r="1.6"/>
+  </g>
+</svg>

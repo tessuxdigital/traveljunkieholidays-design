@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – Travel Junkie Holidays Control Center</title>
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Admin Stylesheets -->
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <!-- Mobile Drawer Controller (Pure CSS Checkbox Hack) -->
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ======================================================================
+         ADMIN SIDEBAR
+         ====================================================================== -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link active">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link">
+          <i class="fa-solid fa-box-archive"></i>
+          <span>Manage Packages</span>
+          <span class="admin-nav-badge badge-info-nav">24</span>
+        </a>
+        <a href="add-package.html" class="admin-nav-link">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>Add New Package</span>
+        </a>
+        <a href="destinations.html" class="admin-nav-link">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Manage Destinations</span>
+        </a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link">
+          <i class="fa-solid fa-receipt"></i>
+          <span>All Orders</span>
+          <span class="admin-nav-badge badge-info-nav">186</span>
+        </a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link">
+          <i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i>
+          <span>Confirmed Orders</span>
+          <span class="admin-nav-badge" style="background:#2E9D68; color:#fff;">158</span>
+        </a>
+        <a href="manage-orders.html#pending" class="admin-nav-link">
+          <i class="fa-solid fa-clock" style="color: #E9A23B;"></i>
+          <span>Pending Orders</span>
+          <span class="admin-nav-badge badge-pending-nav">14</span>
+        </a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link">
+          <i class="fa-solid fa-ban" style="color: #E53E3E;"></i>
+          <span>Cancelled Orders</span>
+        </a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link">
+          <i class="fa-solid fa-users"></i>
+          <span>Customers</span>
+          <span class="admin-nav-badge badge-info-nav">1.4k</span>
+        </a>
+        <a href="#reviews-section" class="admin-nav-link">
+          <i class="fa-solid fa-star"></i>
+          <span>Reviews</span>
+        </a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </a>
+        <a href="../login.html" class="admin-nav-link">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Super Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn">
+          <i class="fa-solid fa-power-off"></i>
+          <span>Sign Out Admin</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         ADMIN MAIN CONTENT
+         ====================================================================== -->
+    <div class="admin-main">
+      <!-- Top Navigation -->
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Admin Dashboard</h1>
+            <span class="admin-breadcrumb-sub">Travel Junkie Holidays Worldwide Management Portal · Live System Overview</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-search">
+          <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+          <input type="text" class="admin-search-input" placeholder="Search orders, packages, customer names, IDs...">
+        </div>
+
+        <div class="admin-topbar-right">
+          <a href="../dashboard.html" class="admin-view-site-link" target="_blank" title="View Customer Dashboard">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span>User Portal</span>
+          </a>
+          <a href="manage-orders.html#pending" class="admin-icon-btn" title="Pending Order Alerts">
+            <i class="fa-regular fa-bell"></i>
+            <span class="admin-notif-dot">14</span>
+          </a>
+          <a href="settings.html" class="admin-icon-btn" title="System Settings">
+            <i class="fa-solid fa-sliders"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- Main Content Container -->
+      <main class="admin-content">
+
+        <!-- Page Header & Quick Action Buttons -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-bolt"></i> Operational Pulse
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              Global Travel Business Operations
+            </h2>
+            <p class="admin-section-subtitle">Real-time statistics across 24 travel packages and worldwide bookings.</p>
+          </div>
+          <div class="admin-header-actions">
+            <a href="add-package.html" class="btn btn-accent btn-sm">
+              <i class="fa-solid fa-plus"></i> Add New Package
+            </a>
+            <a href="manage-orders.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-receipt"></i> Process Orders
+            </a>
+          </div>
+        </div>
+
+        <!-- ==================================================================
+             SECTION 3: ADMIN DASHBOARD OVERVIEW (6 STATISTICS CARDS)
+             ================================================================== -->
+        <section aria-label="Admin Statistics Overview">
+          <div class="admin-stats-grid">
+            <!-- 1. Total Packages -->
+            <div class="admin-stat-card card-packages">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-packages">
+                  <i class="fa-solid fa-box-archive"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#E0F2FE; color:#247BA0;">+3 New</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Total Packages</span>
+                <span class="stat-val">24</span>
+                <span class="stat-sub">Active luxury tour packages</span>
+              </div>
+            </div>
+
+            <!-- 2. Total Orders -->
+            <div class="admin-stat-card card-orders">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-orders">
+                  <i class="fa-solid fa-receipt"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#E2E8F0; color:#102A43;">+18% MoM</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Total Orders</span>
+                <span class="stat-val">186</span>
+                <span class="stat-sub">Lifetime customer bookings</span>
+              </div>
+            </div>
+
+            <!-- 3. Total Customers -->
+            <div class="admin-stat-card card-customers">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-customers">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#F3E8FF; color:#8B5CF6;">+64 New</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Total Customers</span>
+                <span class="stat-val">1,420</span>
+                <span class="stat-sub">Registered global travelers</span>
+              </div>
+            </div>
+
+            <!-- 4. Pending Bookings -->
+            <div class="admin-stat-card card-pending">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-pending">
+                  <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#FFF7EB; color:#E9A23B;">Needs Action</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Pending Bookings</span>
+                <span class="stat-val" style="color: #E9A23B;">14</span>
+                <span class="stat-sub">Awaiting confirmation</span>
+              </div>
+            </div>
+
+            <!-- 5. Confirmed Bookings -->
+            <div class="admin-stat-card card-confirmed">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-confirmed">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#E6F7EF; color:#2E9D68;">85% Ratio</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Confirmed Bookings</span>
+                <span class="stat-val" style="color: #2E9D68;">158</span>
+                <span class="stat-sub">Ticketed &amp; travel-ready</span>
+              </div>
+            </div>
+
+            <!-- 6. Total Revenue -->
+            <div class="admin-stat-card card-revenue">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon icon-revenue">
+                  <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <span class="admin-stat-badge" style="background:#D1FAE5; color:#10B981;">+22.4% YoY</span>
+              </div>
+              <div class="stat-body">
+                <span class="stat-label">Total Revenue</span>
+                <span class="stat-val" style="font-size: 1.45rem;">$482.9K</span>
+                <span class="stat-sub">USD processed volume</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Quick Filter & Search Bar Prototype -->
+        <section class="filter-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-family: var(--font-heading); font-size: 1.05rem; font-weight: 700; color: var(--admin-primary);">
+              <i class="fa-solid fa-filter" style="color: var(--admin-secondary);"></i> Quick Filter Orders
+            </h3>
+            <div class="filter-tabs-row">
+              <a href="manage-orders.html" class="filter-tab active">All (186)</a>
+              <a href="manage-orders.html#confirmed" class="filter-tab">Confirmed (158)</a>
+              <a href="manage-orders.html#pending" class="filter-tab">Pending (14)</a>
+              <a href="manage-orders.html#cancelled" class="filter-tab">Cancelled (14)</a>
+            </div>
+          </div>
+          <div class="filter-grid">
+            <div class="filter-item">
+              <label class="filter-label">Search by Order / Customer / Package</label>
+              <input type="text" class="filter-input" placeholder="e.g. #ORD-9821, Alexander Wright, Maldives...">
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Destination</label>
+              <select class="filter-select">
+                <option value="">All Destinations</option>
+                <option value="maldives">Maldives</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="paris">France (Paris)</option>
+                <option value="bali">Indonesia (Bali)</option>
+                <option value="japan">Japan (Kyoto)</option>
+                <option value="italy">Italy (Amalfi)</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Booking Status</label>
+              <select class="filter-select">
+                <option value="">All Statuses</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="cancelled">Cancelled</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Booking Date</label>
+              <input type="date" class="filter-input" value="2026-10-01">
+            </div>
+            <div class="filter-actions">
+              <a href="manage-orders.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-magnifying-glass"></i> Filter</a>
+              <a href="admin-dashboard.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-left"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Customer Orders Table Preview -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Recent Customer Bookings</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">Real-time booking transactions submitted across portals</span>
+            </div>
+            <a href="manage-orders.html" class="btn btn-outline btn-sm">
+              <span>View All 186 Orders</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer</th>
+                  <th>Package &amp; Destination</th>
+                  <th>Travel Date</th>
+                  <th>Travellers</th>
+                  <th>Total Amount</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Row 1: Confirmed Maldives -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9821</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/profile.jpg" alt="Alexander Wright" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Alexander Wright</span>
+                        <span class="table-sub-text">alexander.w@travelora.com</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Maldives Overwater Sanctuary</span>
+                      <span class="table-sub-text">Maldives · 8 Days</span>
+                    </div>
+                  </td>
+                  <td>Oct 24, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$3,450.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Order Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#confirm-dialog-9821" class="action-btn" style="color: #2E9D68;" title="Confirm Order"><i class="fa-solid fa-check"></i></a>
+                      <a href="#cancel-dialog-9821" class="action-btn btn-delete" title="Cancel Booking"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 2: Pending Swiss Alps -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9820</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer1.jpg" alt="Sophia Chen" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Sophia Chen</span>
+                        <span class="table-sub-text">sophia.chen@example.com</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Swiss Alps &amp; Glacier Express</span>
+                      <span class="table-sub-text">Switzerland · 7 Days</span>
+                    </div>
+                  </td>
+                  <td>Dec 12, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$4,200.00</strong></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Order Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#confirm-dialog-9821" class="action-btn" style="color: #2E9D68;" title="Confirm Order"><i class="fa-solid fa-check"></i></a>
+                      <a href="#cancel-dialog-9821" class="action-btn btn-delete" title="Reject Order"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 3: Confirmed Paris -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9819</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer2.jpg" alt="David Miller" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">David Miller</span>
+                        <span class="table-sub-text">d.miller@londoncorp.co.uk</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Paris Romance &amp; Haute Culture</span>
+                      <span class="table-sub-text">France · 6 Days</span>
+                    </div>
+                  </td>
+                  <td>Jan 15, 2027</td>
+                  <td>1 Adult</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$1,850.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Order Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#confirm-dialog-9821" class="action-btn" style="color: #2E9D68;" title="Confirm Order"><i class="fa-solid fa-check"></i></a>
+                      <a href="#cancel-dialog-9821" class="action-btn btn-delete" title="Cancel Booking"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 4: Confirmed Bali -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9818</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer3.jpg" alt="Elena Rostova" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">Elena Rostova</span>
+                        <span class="table-sub-text">elena.rostova@travelmail.de</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Bali Ubud Wellness Sanctuary</span>
+                      <span class="table-sub-text">Indonesia · 9 Days</span>
+                    </div>
+                  </td>
+                  <td>Mar 04, 2027</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$2,780.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Order Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#confirm-dialog-9821" class="action-btn" style="color: #2E9D68;" title="Confirm Order"><i class="fa-solid fa-check"></i></a>
+                      <a href="#cancel-dialog-9821" class="action-btn btn-delete" title="Cancel Booking"><i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 5: Cancelled Kyoto -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9817</strong></td>
+                  <td>
+                    <div class="table-user-cell">
+                      <img src="../assets/images/customer4.jpg" alt="James Wilson" class="table-user-avatar">
+                      <div class="table-info-stack">
+                        <span class="table-title-bold">James Wilson</span>
+                        <span class="table-sub-text">j.wilson@sydney.com.au</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Tokyo &amp; Kyoto Blossom Odyssey</span>
+                      <span class="table-sub-text">Japan · 8 Days</span>
+                    </div>
+                  </td>
+                  <td>Sep 05, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$2,490.00</strong></td>
+                  <td><span class="status-badge badge-cancelled"><i class="fa-solid fa-ban"></i> Cancelled</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="order-details.html" class="action-btn" title="View Order Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="#confirm-dialog-9821" class="action-btn" style="color: #2E9D68;" title="Reopen Order"><i class="fa-solid fa-rotate-left"></i></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Quick 2-Column Section: Top Packages & Reviews Preview -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;" id="reviews-section">
+          <!-- Top Packages Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title"><i class="fa-solid fa-fire" style="color: var(--admin-accent);"></i> Top Selling Packages</h3>
+              <a href="manage-packages.html" class="btn btn-outline btn-sm">All Packages</a>
+            </div>
+            <div style="padding: 1rem 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #EDF2F7; padding-bottom: 0.75rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <img src="../assets/images/maldives.jpg" alt="Maldives" style="width: 48px; height: 40px; border-radius: 6px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; color: #102A43;">Maldives Overwater Sanctuary</div>
+                    <div style="font-size: 0.74rem; color: #627D98;">68 Bookings · $234,600 Revenue</div>
+                  </div>
+                </div>
+                <span style="font-weight: 800; color: #2E9D68; font-family: var(--font-heading);">$3,450</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #EDF2F7; padding-bottom: 0.75rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <img src="../assets/images/switzerland.jpg" alt="Switzerland" style="width: 48px; height: 40px; border-radius: 6px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; color: #102A43;">Swiss Alps &amp; Glacier Express</div>
+                    <div style="font-size: 0.74rem; color: #627D98;">42 Bookings · $176,400 Revenue</div>
+                  </div>
+                </div>
+                <span style="font-weight: 800; color: #2E9D68; font-family: var(--font-heading);">$4,200</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <img src="../assets/images/japan.jpg" alt="Japan" style="width: 48px; height: 40px; border-radius: 6px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; color: #102A43;">Tokyo &amp; Kyoto Blossom Odyssey</div>
+                    <div style="font-size: 0.74rem; color: #627D98;">38 Bookings · $108,300 Revenue</div>
+                  </div>
+                </div>
+                <span style="font-weight: 800; color: #2E9D68; font-family: var(--font-heading);">$2,850</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Reviews Card -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3 class="admin-card-title"><i class="fa-solid fa-star" style="color: #F59E0B;"></i> Recent Traveler Reviews</h3>
+              <span class="status-badge badge-confirmed">4.92 / 5.0 Avg</span>
+            </div>
+            <div style="padding: 1rem 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+              <div style="border-bottom: 1px solid #EDF2F7; padding-bottom: 0.75rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #102A43;">Alexander Wright</strong>
+                  <span style="color: #F59E0B; font-size: 0.8rem;">★★★★★</span>
+                </div>
+                <p style="font-size: 0.82rem; color: #627D98; margin-top: 0.2rem;">"Unforgettable stay at Le Meurice Paris · Bespoke concierge service was world-class!"</p>
+                <div style="font-size: 0.7rem; color: #9FB3C8;">Maldives Overwater · Verified Booking</div>
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #102A43;">Sophia Chen</strong>
+                  <span style="color: #F59E0B; font-size: 0.8rem;">★★★★★</span>
+                </div>
+                <p style="font-size: 0.82rem; color: #627D98; margin-top: 0.2rem;">"The Glacier Express ride was purely majestic. Seamless Swiss Air connections!"</p>
+                <div style="font-size: 0.7rem; color: #9FB3C8;">Swiss Alps Tour · Verified Booking</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal. All rights reserved.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="settings.html">System Settings</a>
+          <a href="../about.html" target="_blank">Privacy &amp; Compliance</a>
+          <a href="manage-orders.html">Order Logs</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Confirmation Dialog Modals (:target architecture) -->
+  <div id="confirm-dialog-9821" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i> Confirm Order #ORD-9821</h3>
+        <a href="admin-dashboard.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-confirm-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <p>Are you sure you want to <strong>confirm and issue vouchers</strong> for customer <strong>Alexander Wright</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This will send automated flight ticketing confirmations and resort vouchers to alexander.w@travelora.com.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="admin-dashboard.html" class="btn btn-outline btn-sm">Cancel</a>
+        <a href="admin-dashboard.html" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i> Yes, Confirm Order</a>
+      </div>
+    </div>
+  </div>
+
+  <div id="cancel-dialog-9821" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-triangle-exclamation" style="color: #E53E3E;"></i> Cancel Booking Confirmation</h3>
+        <a href="admin-dashboard.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-danger-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <p>Are you sure you want to <strong>cancel or reject this order</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">A cancellation notification will be sent to the customer and refundable balance processing will be initiated according to Travel Junkie Holidays luxury booking terms.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="admin-dashboard.html" class="btn btn-outline btn-sm">Abort</a>
+        <a href="admin-dashboard.html" class="btn btn-danger btn-sm"><i class="fa-solid fa-ban"></i> Confirm Cancellation</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

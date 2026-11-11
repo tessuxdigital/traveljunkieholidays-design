@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotels &amp; Luxury Resorts – Travel Junkie Holidays</title>
+  <!-- Pure CSS Stylesheets - Zero JavaScript -->
+  <link rel="stylesheet" href="css/style.css?v=price-sm-v4">
+  <link rel="stylesheet" href="css/animations.css?v=like-pkg-v1">
+  <link rel="stylesheet" href="css/responsive.css?v=like-pkg-v1">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="header-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+
+        <!-- Mobile Checkbox Toggle (CSS Only) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <div class="nav-links-wrapper">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+            <li><a href="packages.html" class="nav-link">Packages</a></li>
+            <li><a href="hotels.html" class="nav-link active">Hotels</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-accent nav-auth-btn">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>Login</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       PAGE HERO BANNER
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="page-hero-overlay" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="container">
+      <div class="page-hero-content animate-slide-up">
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <i class="fa-solid fa-angle-right"></i>
+          <span>Hotels &amp; Resorts</span>
+        </div>
+        <h1 class="page-hero-title">Handpicked Luxury Stays &amp; Worldwide Resorts</h1>
+        <p class="page-hero-subtitle">
+          From tranquil overwater villas in the Indian Ocean to historic grand palaces in European capitals, discover accommodations that redefine extraordinary comfort.
+        </p>
+
+        <!-- Quick Hotel Search Form -->
+        <div class="search-box-wrapper" style="margin-top: 2rem; text-align: left;">
+          <form class="search-form" action="hotels.html" method="get">
+            <div class="search-input-group">
+              <i class="fa-solid fa-hotel search-icon"></i>
+              <div class="search-field-content">
+                <label for="hotel-city" class="search-label">Location or Hotel</label>
+                <input type="text" id="hotel-city" name="city" class="search-input" placeholder="City or Property Name..." required>
+              </div>
+            </div>
+
+            <div class="search-input-group">
+              <i class="fa-regular fa-calendar-check search-icon"></i>
+              <div class="search-field-content">
+                <label for="check-in-date" class="search-label">Check-In</label>
+                <input type="date" id="check-in-date" name="checkin" class="search-input" value="2026-12-18">
+              </div>
+            </div>
+
+            <div class="search-input-group">
+              <i class="fa-regular fa-calendar-xmark search-icon"></i>
+              <div class="search-field-content">
+                <label for="check-out-date" class="search-label">Check-Out</label>
+                <input type="date" id="check-out-date" name="checkout" class="search-input" value="2026-12-25">
+              </div>
+            </div>
+
+            <div class="search-input-group">
+              <i class="fa-solid fa-users search-icon"></i>
+              <div class="search-field-content">
+                <label for="hotel-guests" class="search-label">Guests &amp; Rooms</label>
+                <select id="hotel-guests" name="guests" class="search-select">
+                  <option value="1">1 Room, 1 Guest</option>
+                  <option value="2" selected>1 Room, 2 Guests</option>
+                  <option value="3">1 Room, 3 Guests</option>
+                  <option value="4">2 Rooms, 4 Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-accent search-submit-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <span>Find Hotels</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       HOTEL CATEGORIES NAVIGATION (ANCHOR TABS)
+       ========================================================================== -->
+  <section class="section-padding-sm" style="background: var(--bg-white); border-bottom: 1px solid var(--border-color); position: sticky; top: 72px; z-index: 90;">
+    <div class="container">
+      <div class="category-filter-nav" style="margin-bottom: 0;">
+        <a href="#luxury-hotels" class="category-filter-btn"><i class="fa-solid fa-crown"></i> Luxury Hotels</a>
+        <a href="#beach-resorts" class="category-filter-btn"><i class="fa-solid fa-umbrella-beach"></i> Beach Resorts</a>
+        <a href="#budget-hotels" class="category-filter-btn"><i class="fa-solid fa-wallet"></i> Budget Hotels</a>
+        <a href="#boutique-hotels" class="category-filter-btn"><i class="fa-solid fa-gem"></i> Boutique Hotels</a>
+        <a href="#mountain-resorts" class="category-filter-btn"><i class="fa-solid fa-mountain"></i> Mountain Resorts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY 1: LUXURY HOTELS
+       ========================================================================== -->
+  <section id="luxury-hotels" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-crown"></i> 5-Star Opulence</span>
+          <h2 class="continent-title">Luxury Hotels</h2>
+          <p class="continent-desc">Iconic historic landmarks, Michelin-starred dining, bespoke butler services, and refined architecture.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Luxury Hotel 1 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="The Ritz-Carlton Palace" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Luxury</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Place Vendôme, Paris, France</div>
+            <h3 class="hotel-name">The Ritz-Carlton Palace</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Free Cancellation</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-wifi"></i> Ultra High-Speed Wi-Fi</span>
+              <span class="facility-item"><i class="fa-solid fa-water-ladder"></i> Heated Indoor Pool</span>
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Chanel Spa Treatment</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> 2-Star Michelin Dining</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$480 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Luxury Hotel 2 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="The Chedi Alpine Resort" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Palace</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Andermatt, Swiss Alps, Switzerland</div>
+            <h3 class="hotel-name">The Chedi Alpine Resort &amp; Spa</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Ski-in/Ski-out Butler</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-fire"></i> In-Room Fireplaces</span>
+              <span class="facility-item"><i class="fa-solid fa-person-swimming"></i> Thermal Pools</span>
+              <span class="facility-item"><i class="fa-solid fa-wine-glass"></i> Wine &amp; Cigar Library</span>
+              <span class="facility-item"><i class="fa-solid fa-car"></i> Limousine Transfer</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$540 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Luxury Hotel 3 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="Burj Al Arab Jumeirah" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Iconic</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Jumeirah Beach, Dubai, UAE</div>
+            <h3 class="hotel-name">Burj Al Arab Jumeirah</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> 24-Karat Gold Amenities</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-helicopter"></i> Private Helipad</span>
+              <span class="facility-item"><i class="fa-solid fa-water"></i> Private Beach Terrace</span>
+              <span class="facility-item"><i class="fa-solid fa-user-tie"></i> Dedicated Personal Butler</span>
+              <span class="facility-item"><i class="fa-solid fa-fish"></i> Underwater Aquarium Dining</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$890 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY 2: BEACH RESORTS
+       ========================================================================== -->
+  <section id="beach-resorts" class="continent-section bg-light-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-umbrella-beach"></i> Oceanfront Paradise</span>
+          <h2 class="continent-title">Beach Resorts</h2>
+          <p class="continent-desc">Private turquoise lagoons, powdery white sands, overwater pavilions, and sunset sailing yachts.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Beach Resort 1 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Soneva Jani Maldives" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Island</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Noonu Atoll, Maldives</div>
+            <h3 class="hotel-name">Soneva Jani Overwater Sanctuary</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Retractable Starlight Roof</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-person-swimming"></i> Private Lagoon Slide</span>
+              <span class="facility-item"><i class="fa-solid fa-sailboat"></i> Yacht Transfers</span>
+              <span class="facility-item"><i class="fa-solid fa-film"></i> Overwater Cinema</span>
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Ayurvedic Holistic Spa</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$750 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Beach Resort 2 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80" alt="Four Seasons Resort Bali" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.9 Tropical</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Jimbaran Bay, Bali, Indonesia</div>
+            <h3 class="hotel-name">Four Seasons Oceanfront Sanctuary</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Private Plunge Pool</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-umbrella-beach"></i> Direct Coral Beach Access</span>
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Balinese Massage Temple</span>
+              <span class="facility-item"><i class="fa-solid fa-cocktail"></i> Sundowner Cliff Bar</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Fresh Seafood Grill</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$420 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Beach Resort 3 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Qualia Resort Hamilton Island" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.9 Coastal</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Whitsunday Islands, Great Barrier Reef, Australia</div>
+            <h3 class="hotel-name">Qualia Reef Pavilion &amp; Villas</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Private Golf Buggy Included</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-water"></i> Coral Sea Infinity Pool</span>
+              <span class="facility-item"><i class="fa-solid fa-ship"></i> Catamaran Snorkel Safaris</span>
+              <span class="facility-item"><i class="fa-solid fa-wine-bottle"></i> Sommelier Wine Tastings</span>
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Ocean Mineral Spa</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$620 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY 3: BUDGET HOTELS
+       ========================================================================== -->
+  <section id="budget-hotels" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-wallet"></i> Smart &amp; Affordable</span>
+          <h2 class="continent-title">Budget Hotels</h2>
+          <p class="continent-desc">Modern amenities, central downtown connectivity, hyper-clean design, and unbeatable worldwide value.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Budget Hotel 1 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="citizenM Paris Gare de Lyon" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.5 Smart</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> 12th Arrondissement, Paris, France</div>
+            <h3 class="hotel-name">citizenM Urban Design Hub</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> High-Speed Metro Link</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-tablet-screen-button"></i> Smart MoodPad Room Control</span>
+              <span class="facility-item"><i class="fa-solid fa-shower"></i> Raindance Power Shower</span>
+              <span class="facility-item"><i class="fa-solid fa-mug-hot"></i> 24/7 Artisan Coffee &amp; Bakery</span>
+              <span class="facility-item"><i class="fa-solid fa-laptop"></i> Co-working Cloud Lounge</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$115 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Budget Hotel 2 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80" alt="Motel One London-Tower Hill" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.6 Comfort</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Tower Hill, London, United Kingdom</div>
+            <h3 class="hotel-name">Motel One Tower Bridge Lodge</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> 5 Min Walk to Underground</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-bed"></i> Egyptian Cotton Bedding</span>
+              <span class="facility-item"><i class="fa-solid fa-martini-glass"></i> One Lounge Gin Bar</span>
+              <span class="facility-item"><i class="fa-solid fa-wifi"></i> Fiber-Optic Wi-Fi</span>
+              <span class="facility-item"><i class="fa-solid fa-bag-shopping"></i> Free Luggage Storage</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$130 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Budget Hotel 3 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80" alt="Generator Boutique Suites Barcelona" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.4 Trendy</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Gràcia District, Barcelona, Spain</div>
+            <h3 class="hotel-name">Generator Boutique Suites</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Rooftop Tapas Terrace</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-shield-halved"></i> Keycard Secure Access</span>
+              <span class="facility-item"><i class="fa-solid fa-sun"></i> Private Sun Terraces</span>
+              <span class="facility-item"><i class="fa-solid fa-bicycle"></i> City Bike Rental Desk</span>
+              <span class="facility-item"><i class="fa-solid fa-globe"></i> Multilingual Tour Desk</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$95 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY 4: BOUTIQUE HOTELS
+       ========================================================================== -->
+  <section id="boutique-hotels" class="continent-section bg-light-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-gem"></i> Curated Character</span>
+          <h2 class="continent-title">Boutique Hotels</h2>
+          <p class="continent-desc">Intimate artistic properties, personalized hospitality, unique architectural charm, and local heritage.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Boutique Hotel 1 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Canaves Oia Epitome Santorini" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.9 Boutique</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Oia Caldera Cliff, Santorini, Greece</div>
+            <h3 class="hotel-name">Canaves Oia Cliffside Suites</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Sunset Caldera View</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-water"></i> Private Heated Cave Plunge Pool</span>
+              <span class="facility-item"><i class="fa-solid fa-wine-glass"></i> Greek Wine Cellar Degustation</span>
+              <span class="facility-item"><i class="fa-solid fa-sun"></i> Private Sunken Lounge</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Organic Aegean Breakfast</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$490 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Boutique Hotel 2 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=80" alt="Hoshinoya Kyoto Ryokan" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Heritage</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Arashiyama River, Kyoto, Japan</div>
+            <h3 class="hotel-name">Hoshinoya Riverside Ryokan</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Traditional Boat Arrival</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-hot-tub-person"></i> Hinoki Wood Onsen Baths</span>
+              <span class="facility-item"><i class="fa-solid fa-mug-hot"></i> Zen Tea Ceremony Pavilion</span>
+              <span class="facility-item"><i class="fa-solid fa-tree"></i> Private Bamboo Forest Garden</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Kaiseki Multi-Course Banquet</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$580 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-japan.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Boutique Hotel 3 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Relais Christine Saint-Germain" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.9 Historic</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Saint-Germain-des-Prés, Paris, France</div>
+            <h3 class="hotel-name">Relais Christine Manor Hotel</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> 16th-Century Private Courtyard</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Guerlain Subterranean Spa</span>
+              <span class="facility-item"><i class="fa-solid fa-champagne-glasses"></i> Honesty Library Bar</span>
+              <span class="facility-item"><i class="fa-solid fa-car"></i> Complimentary Fiat 500 Convertible</span>
+              <span class="facility-item"><i class="fa-solid fa-bed"></i> Toile de Jouy Designer Rooms</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$380 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-paris.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       CATEGORY 5: MOUNTAIN RESORTS
+       ========================================================================== -->
+  <section id="mountain-resorts" class="continent-section">
+    <div class="container">
+      <div class="continent-header">
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-mountain"></i> Alpine Sanctuaries</span>
+          <h2 class="continent-title">Mountain Resorts</h2>
+          <p class="continent-desc">Glacial peaks, ski-in/ski-out chalets, restorative hot springs, and panoramic alpine terraces.</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3">
+        <!-- Mountain Resort 1 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1502784444187-359ac186c5bb?auto=format&fit=crop&w=800&q=80" alt="The Omnia Zermatt" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 5.0 Alpine</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Matterhorn Cliff, Zermatt, Switzerland</div>
+            <h3 class="hotel-name">The Omnia Alpine Mountain Lodge</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Matterhorn Vista Balcony</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-person-skiing"></i> Direct Ski Lift Elevator</span>
+              <span class="facility-item"><i class="fa-solid fa-hot-tub-person"></i> Indoor/Outdoor Jacuzzi Peak Pool</span>
+              <span class="facility-item"><i class="fa-solid fa-fire"></i> Cedar Wood Fireplace Lounges</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Alpine Herb Gastronomy</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$510 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mountain Resort 2 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1517411032315-54ef2cb783bb?auto=format&fit=crop&w=800&q=80" alt="Fairmont Banff Springs" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.9 Historic</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Banff National Park, Alberta, Canada</div>
+            <h3 class="hotel-name">Fairmont Castle in the Rockies</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> UNESCO World Heritage Site</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Willow Stream Mineral Springs</span>
+              <span class="facility-item"><i class="fa-solid fa-person-skating"></i> Frozen Lake Ice Skating</span>
+              <span class="facility-item"><i class="fa-solid fa-tree"></i> Guided Grizzly Wildlife Treks</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Alberta Prime Steakhouse</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$460 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mountain Resort 3 -->
+        <article class="hotel-card">
+          <div class="hotel-img-box">
+            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=800&q=80" alt="Explora Sacred Valley Peru" loading="lazy">
+            <span class="hotel-star-badge"><i class="fa-solid fa-star"></i> 4.8 Eco-Lodge</span>
+          </div>
+          <div class="hotel-card-body">
+            <div class="hotel-location"><i class="fa-solid fa-location-dot"></i> Sacred Valley, Urubamba, Peru</div>
+            <h3 class="hotel-name">Explora Sacred Valley Mountain Lodge</h3>
+            <span class="hotel-perk-badge"><i class="fa-solid fa-check"></i> Machu Picchu Expedition Base</span>
+            <div class="hotel-facilities-list">
+              <span class="facility-item"><i class="fa-solid fa-horse"></i> Private Peruvian Paso Horses</span>
+              <span class="facility-item"><i class="fa-solid fa-person-hiking"></i> 30+ Guided Mountain Trails</span>
+              <span class="facility-item"><i class="fa-solid fa-spa"></i> Pumacahua Colonial Bathhouse</span>
+              <span class="facility-item"><i class="fa-solid fa-utensils"></i> Andean Ancient Grain Menus</span>
+            </div>
+            <div class="hotel-pricing-row">
+              <div class="hotel-price">$530 <span>/ night</span></div>
+              <div class="package-actions">
+                <a href="destination-details.html" class="btn btn-outline-primary btn-sm">View Details</a>
+                <a href="#book-modal" class="btn btn-accent btn-sm">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       HOTEL BOOKING BENEFITS STRIP
+       ========================================================================== -->
+  <section class="section-padding bg-alt-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge badge-accent-soft">
+          <i class="fa-solid fa-shield-heart"></i> Travel Junkie Holidays Privileges
+        </span>
+        <h2 class="section-title">The Travel Junkie Holidays Hotel Advantage</h2>
+        <p class="section-subtitle">
+          Book directly through our global concierge to enjoy elite VIP amenities typically reserved for ultra-high-tier status members.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-tags"></i>
+          </div>
+          <h3 class="feature-title">Guaranteed Best Rates</h3>
+          <p class="feature-desc">
+            We partner directly with leading luxury hotel groups and boutique estates worldwide to provide competitive rates without hidden booking markups.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-gift"></i>
+          </div>
+          <h3 class="feature-title">Exclusive VIP Perks</h3>
+          <p class="feature-desc">
+            Enjoy complimentary room upgrades upon availability, daily organic breakfast for two, and late 4:00 PM check-out privileges.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="feature-title">Instant Concierge Assistance</h3>
+          <p class="feature-desc">
+            Need special dietary preferences, airport limousine transfers, or romantic anniversary setups? We coordinate directly with general managers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+          <p class="footer-desc">
+            Your premier global travel companion crafting tailor-made journeys, authentic cultural experiences, and luxury vacations across all 7 continents since 2012.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="destinations.html"><i class="fa-solid fa-angle-right"></i> All Destinations</a></li>
+            <li><a href="packages.html"><i class="fa-solid fa-angle-right"></i> Tour Packages</a></li>
+            <li><a href="hotels.html"><i class="fa-solid fa-angle-right"></i> Luxury Hotels</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Our Story</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact &amp; Support</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-angle-right"></i> Member Login</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hotel Stays -->
+        <div>
+          <h4 class="footer-col-title">Hotel Stays</h4>
+          <ul class="footer-links-list">
+            <li><a href="#luxury-hotels"><i class="fa-solid fa-angle-right"></i> 5-Star Luxury Palaces</a></li>
+            <li><a href="#beach-resorts"><i class="fa-solid fa-angle-right"></i> Oceanfront Beach Resorts</a></li>
+            <li><a href="#budget-hotels"><i class="fa-solid fa-angle-right"></i> Budget &amp; Smart Stays</a></li>
+            <li><a href="#boutique-hotels"><i class="fa-solid fa-angle-right"></i> Intimate Boutique Hotels</a></li>
+            <li><a href="#mountain-resorts"><i class="fa-solid fa-angle-right"></i> Alpine Mountain Lodges</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Headquarters -->
+        <div>
+          <h4 class="footer-col-title">Global Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>742 Evergreen Boulevard, Suite 400, New York, NY 10001, USA</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (800) 555-8728 / +44 20 7946 0921</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>concierge@traveljunkieholidays.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>24/7 International Concierge Support</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Travel Junkie Holidays Inc. All rights reserved. Pure HTML5 &amp; CSS3.
+        </div>
+        <div style="font-size: 0.85rem; color: #9FB3C8;">
+          Discover the World. Experience the Extraordinary.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PURE CSS BOOKING MODAL (ZERO JAVASCRIPT - POWERED BY :TARGET)
+       ========================================================================== -->
+  <div id="book-modal" class="modal-overlay">
+    <div class="modal-dialog">
+      <a href="#close" class="modal-close-btn" aria-label="Close modal">&times;</a>
+      
+      <div style="margin-bottom: 1.5rem;">
+        <span class="section-badge badge-accent-soft" style="margin-bottom: 0.35rem;">
+          <i class="fa-solid fa-hotel"></i> Hotel Reservation
+        </span>
+        <h3 style="font-size: 1.65rem; color: var(--primary-color);">Reserve Your Stay</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">
+          Instant confirmation with zero booking fees and free cancellation.
+        </p>
+      </div>
+
+      <form action="contact.html#message-sent" method="get">
+        <div class="grid grid-2" style="gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8rem;">Full Name *</label>
+            <input type="text" name="name" class="form-input" placeholder="e.g. Eleanor Vance" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8rem;">Email Address *</label>
+            <input type="email" name="email" class="form-input" placeholder="eleanor@example.com" required>
+          </div>
+        </div>
+
+        <div class="grid grid-2" style="gap: 1rem; margin-bottom: 1rem;">
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8rem;">Check-in Date *</label>
+            <input type="date" name="checkin" class="form-input" value="2026-12-22" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 0;">
+            <label class="form-label" style="font-size: 0.8rem;">Check-out Date *</label>
+            <input type="date" name="checkout" class="form-input" value="2026-12-28" required>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 1rem;">
+          <label class="form-label" style="font-size: 0.8rem;">Room Category &amp; Guests</label>
+          <select name="room_type" class="form-select">
+            <option value="luxury">Luxury Suite with Ocean/Mountain View</option>
+            <option value="deluxe" selected>Deluxe King Room</option>
+            <option value="family">Family 2-Bedroom Suite</option>
+            <option value="penthouse">Presidential Penthouse</option>
+          </select>
+        </div>
+
+        <div style="background: var(--bg-light); border-radius: var(--radius-sm); padding: 0.85rem 1rem; margin-bottom: 1.25rem; font-size: 0.82rem; color: var(--text-muted);">
+          <i class="fa-solid fa-check-circle" style="color: #059669; margin-right: 0.35rem;"></i>
+          Free cancellation until 48 hours prior to arrival. Pay at the hotel.
+        </div>
+
+        <button type="submit" class="btn btn-accent btn-full btn-lg">
+          <i class="fa-solid fa-bed"></i>
+          <span>Confirm Room Reservation</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+</body>
+</html>

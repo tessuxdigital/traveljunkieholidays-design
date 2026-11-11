@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Travel Packages – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <!-- Active Link -->
+        <a href="manage-packages.html" class="admin-nav-link active">
+          <i class="fa-solid fa-box-archive"></i>
+          <span>Manage Packages</span>
+          <span class="admin-nav-badge badge-info-nav">24</span>
+        </a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link"><i class="fa-solid fa-users"></i><span>Customers</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Manage Travel Packages</h1>
+            <span class="admin-breadcrumb-sub">Inventory Control · 24 Packages Cataloged</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-search">
+          <i class="fa-solid fa-magnifying-glass admin-search-icon"></i>
+          <input type="text" class="admin-search-input" placeholder="Search packages by name, country, ID...">
+        </div>
+
+        <div class="admin-topbar-right">
+          <a href="../packages.html" class="admin-view-site-link" target="_blank">
+            <i class="fa-solid fa-eye"></i><span>Live Catalog</span>
+          </a>
+          <a href="add-package.html" class="btn btn-accent btn-sm">
+            <i class="fa-solid fa-plus"></i> Add New Package
+          </a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+        <!-- Page Title & Quick Summary -->
+        <div class="admin-page-header">
+          <div class="admin-page-header-info">
+            <span style="font-size: 0.76rem; font-weight: 700; text-transform: uppercase; color: var(--admin-secondary); letter-spacing: 1px;">
+              <i class="fa-solid fa-box-archive"></i> Tour Portfolio
+            </span>
+            <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary);">
+              All Travel Packages
+            </h2>
+            <p class="admin-section-subtitle">Add, inspect, configure pricing, availability slots, and visual itineraries.</p>
+          </div>
+          <div class="admin-header-actions">
+            <a href="add-package.html" class="btn btn-accent btn-sm">
+              <i class="fa-solid fa-circle-plus"></i> Create Package
+            </a>
+            <a href="destinations.html" class="btn btn-outline btn-sm">
+              <i class="fa-solid fa-map"></i> Destinations
+            </a>
+          </div>
+        </div>
+
+        <!-- Filter Toolbar -->
+        <section class="filter-card">
+          <div class="filter-grid">
+            <div class="filter-item">
+              <label class="filter-label">Search Package Name</label>
+              <input type="text" class="filter-input" placeholder="e.g. Maldives Overwater, Swiss Alps, Kyoto...">
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Destination</label>
+              <select class="filter-select">
+                <option value="">All Destinations</option>
+                <option value="maldives">Maldives</option>
+                <option value="switzerland">Switzerland</option>
+                <option value="paris">France</option>
+                <option value="bali">Indonesia</option>
+                <option value="japan">Japan</option>
+                <option value="italy">Italy</option>
+                <option value="dubai">United Arab Emirates</option>
+                <option value="thailand">Thailand</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Availability</label>
+              <select class="filter-select">
+                <option value="">All Slots</option>
+                <option value="available">Available (10+ slots)</option>
+                <option value="limited">Limited Slots (&lt; 5)</option>
+                <option value="soldout">Sold Out</option>
+              </select>
+            </div>
+            <div class="filter-item">
+              <label class="filter-label">Status</label>
+              <select class="filter-select">
+                <option value="">All Statuses</option>
+                <option value="published">Published</option>
+                <option value="draft">Draft</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <a href="manage-packages.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-filter"></i> Apply</a>
+              <a href="manage-packages.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-rotate-left"></i></a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Packages Table -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Packages Inventory</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">Showing 8 of 24 active tour packages</span>
+            </div>
+            <span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 24 Active &amp; Bookable</span>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Package ID</th>
+                  <th>Package Image</th>
+                  <th>Package Name</th>
+                  <th>Destination</th>
+                  <th>Duration</th>
+                  <th>Price</th>
+                  <th>Availability</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1. Maldives -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-101</strong></td>
+                  <td><img src="../assets/images/maldives.jpg" alt="Maldives" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Maldives Ultra-Luxury Overwater Escape</span>
+                      <span class="table-sub-text">Private Reef Villa · All-Inclusive</span>
+                    </div>
+                  </td>
+                  <td>Maldives, South Asia</td>
+                  <td>8 Days / 7 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$3,450.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 12 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 2. Switzerland -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-102</strong></td>
+                  <td><img src="../assets/images/switzerland.jpg" alt="Switzerland" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Zermatt &amp; Glacier Express Winter Grandeur</span>
+                      <span class="table-sub-text">Alpine Ski Lodge · Glacier Train</span>
+                    </div>
+                  </td>
+                  <td>Switzerland, Europe</td>
+                  <td>7 Days / 6 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$4,200.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 8 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 3. Paris -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-103</strong></td>
+                  <td><img src="../assets/images/paris.jpg" alt="Paris" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Paris Romance &amp; Haute Culture Experience</span>
+                      <span class="table-sub-text">Palace Suite · Private Louvre Tour</span>
+                    </div>
+                  </td>
+                  <td>Paris, France</td>
+                  <td>6 Days / 5 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,850.00</strong></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-hourglass"></i> 4 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 4. Bali -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-104</strong></td>
+                  <td><img src="../assets/images/bali.jpg" alt="Bali" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Bali Ubud Wellness &amp; Coastal Retreat</span>
+                      <span class="table-sub-text">Eco Pool Villa · Ayurvedic Spa</span>
+                    </div>
+                  </td>
+                  <td>Bali, Indonesia</td>
+                  <td>9 Days / 8 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$2,780.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 15 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 5. Japan -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-105</strong></td>
+                  <td><img src="../assets/images/japan.jpg" alt="Japan" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Tokyo &amp; Kyoto Blossom Odyssey</span>
+                      <span class="table-sub-text">Ryokan &amp; Shinkansen Bullet Train</span>
+                    </div>
+                  </td>
+                  <td>Japan, East Asia</td>
+                  <td>8 Days / 7 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$2,850.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 6 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 6. Italy -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-106</strong></td>
+                  <td><img src="../assets/images/italy.jpg" alt="Italy" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Amalfi Coast &amp; Tuscan Vineyards</span>
+                      <span class="table-sub-text">Mediterranean Clifftop Estate</span>
+                    </div>
+                  </td>
+                  <td>Italy, Europe</td>
+                  <td>7 Days / 6 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$3,190.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 10 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 7. Dubai -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-107</strong></td>
+                  <td><img src="../assets/images/dubai.jpg" alt="Dubai" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Burj Skyline &amp; Desert Dunes Safari</span>
+                      <span class="table-sub-text">7-Star Marina Suite &amp; Dune Camp</span>
+                    </div>
+                  </td>
+                  <td>Dubai, UAE</td>
+                  <td>5 Days / 4 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,980.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 18 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- 8. Thailand -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#PKG-108</strong></td>
+                  <td><img src="../assets/images/thailand.jpg" alt="Thailand" class="table-thumb"></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Phuket Azure Islands &amp; Temples</span>
+                      <span class="table-sub-text">Beachfront Pool Pavilion</span>
+                    </div>
+                  </td>
+                  <td>Phuket, Thailand</td>
+                  <td>6 Days / 5 Nights</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading); font-size: 0.95rem;">$1,650.00</strong></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> 14 Slots Left</span></td>
+                  <td>
+                    <div class="action-btn-group">
+                      <a href="#view-pkg-101" class="action-btn" title="View Package Details"><i class="fa-solid fa-eye"></i></a>
+                      <a href="edit-package.html" class="action-btn btn-edit" title="Edit Package"><i class="fa-solid fa-pen-to-square"></i></a>
+                      <a href="#delete-pkg-101" class="action-btn btn-delete" title="Delete Package"><i class="fa-solid fa-trash-can"></i></a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="add-package.html">Add New Package</a>
+          <a href="destinations.html">Manage Destinations</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal Dialog -->
+  <div id="delete-pkg-101" class="admin-modal-overlay">
+    <div class="admin-modal-dialog">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-triangle-exclamation" style="color: #E53E3E;"></i> Delete Package Confirmation</h3>
+        <a href="manage-packages.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body" style="text-align: center;">
+        <div class="dialog-icon-box dialog-danger-icon"><i class="fa-solid fa-trash-can"></i></div>
+        <p>Are you sure you want to delete <strong>#PKG-101: Maldives Ultra-Luxury Overwater Escape</strong>?</p>
+        <p style="font-size: 0.82rem; color: var(--admin-text-muted);">This action will remove the package from the live customer booking catalog. Existing customer bookings will be archived.</p>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="manage-packages.html" class="btn btn-outline btn-sm">Cancel</a>
+        <a href="manage-packages.html" class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i> Confirm Deletion</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- View Package Modal Dialog -->
+  <div id="view-pkg-101" class="admin-modal-overlay">
+    <div class="admin-modal-dialog" style="max-width: 600px;">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title"><i class="fa-solid fa-box-archive" style="color: var(--admin-secondary);"></i> Package Details · #PKG-101</h3>
+        <a href="manage-packages.html" class="admin-modal-close">&times;</a>
+      </div>
+      <div class="admin-modal-body">
+        <img src="../assets/images/maldives.jpg" alt="Maldives" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h4 style="font-family: var(--font-heading); font-size: 1.2rem; color: #102A43;">Maldives Ultra-Luxury Overwater Escape</h4>
+          <span style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: #2E9D68;">$3,450.00</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #627D98;">Experience crystal-clear waters, luxury island resorts, private catamaran excursions, and world-class culinary excellence in North Malé Atoll.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.82rem;">
+          <div><strong>Destination:</strong> Maldives, South Asia</div>
+          <div><strong>Duration:</strong> 8 Days / 7 Nights</div>
+          <div><strong>Availability:</strong> 12 Slots Available</div>
+          <div><strong>Hotel:</strong> Emerald Lagoon Resort (5-Star)</div>
+        </div>
+      </div>
+      <div class="admin-modal-footer">
+        <a href="edit-package.html" class="btn btn-accent btn-sm"><i class="fa-solid fa-pen-to-square"></i> Edit Package</a>
+        <a href="manage-packages.html" class="btn btn-primary btn-sm">Close</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

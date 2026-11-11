@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Profile: Alexander Wright – Travel Junkie Holidays Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-forms.css?v=travel-junkie-1">
+  <link rel="stylesheet" href="../css/admin-responsive.css?v=travel-junkie-1">
+  <link rel="icon" type="image/svg+xml" href="../assets/images/logo.svg">
+</head>
+<body class="admin-body">
+
+  <input type="checkbox" id="admin-sidebar-toggle" class="admin-sidebar-toggle-input">
+  <label for="admin-sidebar-toggle" class="admin-sidebar-backdrop" aria-label="Close Sidebar"></label>
+
+  <div class="admin-layout">
+
+    <!-- ADMIN SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="admin-dashboard.html" class="admin-logo-link">
+          <div class="admin-logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="admin-logo-text">
+            <span class="admin-logo-title">Travel Junkie<span> Holidays</span></span>
+            <span class="admin-badge-pill"><i class="fa-solid fa-lock"></i> Admin Portal</span>
+          </div>
+        </a>
+        <label for="admin-sidebar-toggle" class="admin-sidebar-close" aria-label="Close sidebar"><i class="fa-solid fa-xmark"></i></label>
+      </div>
+
+      <nav class="admin-sidebar-nav">
+        <span class="admin-nav-category">Main Overview</span>
+        <a href="admin-dashboard.html" class="admin-nav-link"><i class="fa-solid fa-gauge-high"></i><span>Dashboard</span></a>
+
+        <span class="admin-nav-category">Inventory &amp; Tours</span>
+        <a href="manage-packages.html" class="admin-nav-link"><i class="fa-solid fa-box-archive"></i><span>Manage Packages</span><span class="admin-nav-badge badge-info-nav">24</span></a>
+        <a href="add-package.html" class="admin-nav-link"><i class="fa-solid fa-circle-plus"></i><span>Add New Package</span></a>
+        <a href="destinations.html" class="admin-nav-link"><i class="fa-solid fa-map-location-dot"></i><span>Manage Destinations</span></a>
+
+        <span class="admin-nav-category">Orders &amp; Bookings</span>
+        <a href="manage-orders.html" class="admin-nav-link"><i class="fa-solid fa-receipt"></i><span>All Orders</span><span class="admin-nav-badge badge-info-nav">186</span></a>
+        <a href="manage-orders.html#confirmed" class="admin-nav-link"><i class="fa-solid fa-circle-check" style="color: #2E9D68;"></i><span>Confirmed Orders</span></a>
+        <a href="manage-orders.html#pending" class="admin-nav-link"><i class="fa-solid fa-clock" style="color: #E9A23B;"></i><span>Pending Orders</span><span class="admin-nav-badge badge-pending-nav">14</span></a>
+        <a href="manage-orders.html#cancelled" class="admin-nav-link"><i class="fa-solid fa-ban" style="color: #E53E3E;"></i><span>Cancelled Orders</span></a>
+
+        <span class="admin-nav-category">Users &amp; Reviews</span>
+        <a href="customers.html" class="admin-nav-link active"><i class="fa-solid fa-users"></i><span>Customers</span><span class="admin-nav-badge badge-info-nav">1.4k</span></a>
+        <a href="admin-dashboard.html#reviews-section" class="admin-nav-link"><i class="fa-solid fa-star"></i><span>Reviews</span></a>
+
+        <span class="admin-nav-category">Administration</span>
+        <a href="settings.html" class="admin-nav-link"><i class="fa-solid fa-gear"></i><span>Settings</span></a>
+        <a href="../login.html" class="admin-nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div class="admin-profile-pill">
+          <img src="../assets/images/profile.jpg" alt="Admin" class="admin-avatar-img">
+          <div class="admin-profile-meta">
+            <span class="admin-name">Marcus Vance</span>
+            <span class="admin-role">Super Administrator</span>
+          </div>
+        </div>
+        <a href="../login.html" class="admin-logout-btn"><i class="fa-solid fa-power-off"></i><span>Sign Out Admin</span></a>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+      <header class="admin-topbar">
+        <div class="admin-topbar-left">
+          <label for="admin-sidebar-toggle" class="admin-toggle-btn" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></label>
+          <div class="admin-breadcrumb">
+            <h1 class="admin-page-title">Customer Profile: Alexander Wright</h1>
+            <span class="admin-breadcrumb-sub">Client #CUST-701 · Account Dossier &amp; Booking History</span>
+          </div>
+        </div>
+
+        <div class="admin-topbar-right">
+          <a href="customers.html" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-arrow-left"></i> All Customers
+          </a>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <!-- Customer Summary Hero Card -->
+        <section class="admin-card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+              <img src="../assets/images/profile.jpg" alt="Alexander Wright" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--admin-accent); box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                  <h2 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: var(--admin-primary); margin: 0;">Alexander Wright</h2>
+                  <span class="status-badge" style="background: rgba(255,183,3,0.2); color: #102A43; border: 1px solid var(--admin-accent); font-weight: 800;">
+                    <i class="fa-solid fa-crown" style="color: var(--admin-accent);"></i> VIP Elite Voyager
+                  </span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--admin-text-muted); margin-top: 4px;">
+                  <span><i class="fa-regular fa-envelope"></i> alexander.wright@travelora.com</span> · 
+                  <span><i class="fa-solid fa-phone"></i> +1 (555) 739-2041</span> · 
+                  <span><i class="fa-solid fa-location-dot"></i> New York, United States</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem;">
+              <a href="manage-orders.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Create Booking</a>
+              <a href="customers.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-envelope"></i> Email Client</a>
+            </div>
+          </div>
+
+          <!-- Customer Key Metrics Row -->
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; border-top: 1px solid var(--admin-border); padding-top: 1.25rem;">
+            <div style="background: #F8FAFC; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+              <div style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: var(--admin-text-muted);">Lifetime Spend</div>
+              <div style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: #2E9D68; margin-top: 2px;">$48,250.00</div>
+              <div style="font-size: 0.72rem; color: var(--admin-text-light);">Tier 1 High Net Worth</div>
+            </div>
+
+            <div style="background: #F8FAFC; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+              <div style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: var(--admin-text-muted);">Total Bookings</div>
+              <div style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--admin-primary); margin-top: 2px;">15 Trips</div>
+              <div style="font-size: 0.72rem; color: var(--admin-text-light);">12 Completed · 3 Active</div>
+            </div>
+
+            <div style="background: #F8FAFC; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+              <div style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: var(--admin-text-muted);">Loyalty Points</div>
+              <div style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--admin-secondary); margin-top: 2px;">4,850 Pts</div>
+              <div style="font-size: 0.72rem; color: var(--admin-text-light);">200 pts to Platinum Jet</div>
+            </div>
+
+            <div style="background: #F8FAFC; padding: 0.85rem 1rem; border-radius: 8px; border: 1px solid var(--admin-border);">
+              <div style="font-size: 0.74rem; text-transform: uppercase; font-weight: 700; color: var(--admin-text-muted);">Member Since</div>
+              <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--admin-primary); margin-top: 2px;">Feb 2023</div>
+              <div style="font-size: 0.72rem; color: #2E9D68; font-weight: 700;"><i class="fa-solid fa-circle-check"></i> Verified Passport</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Customer Complete Booking History Table -->
+        <section class="admin-card">
+          <div class="admin-card-header">
+            <div>
+              <h3 class="admin-card-title">Booking &amp; Itinerary History</h3>
+              <span style="font-size: 0.8rem; color: var(--admin-text-muted);">Complete record of all sample reservations for Alexander Wright</span>
+            </div>
+            <span class="status-badge badge-confirmed">15 Total Records</span>
+          </div>
+
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Package &amp; Destination</th>
+                  <th>Booking Date</th>
+                  <th>Travel Date</th>
+                  <th>Guests</th>
+                  <th>Amount</th>
+                  <th>Payment</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- 1 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9821</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Maldives Ultra-Luxury Overwater Escape</span>
+                      <span class="table-sub-text">Maldives · 8 Days</span>
+                    </div>
+                  </td>
+                  <td>Sep 18, 2026</td>
+                  <td>Oct 24, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$3,450.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+
+                <!-- 2 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9820</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Swiss Alps &amp; Glacier Express</span>
+                      <span class="table-sub-text">Switzerland · 7 Days</span>
+                    </div>
+                  </td>
+                  <td>Aug 14, 2026</td>
+                  <td>Dec 12, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$4,200.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+
+                <!-- 3 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9819</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Paris Romance &amp; Haute Culture Experience</span>
+                      <span class="table-sub-text">Paris, France · 6 Days</span>
+                    </div>
+                  </td>
+                  <td>Oct 02, 2026</td>
+                  <td>Jan 15, 2027</td>
+                  <td>1 Adult</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$1,850.00</strong></td>
+                  <td><span class="status-badge badge-pending">Card Authorized</span></td>
+                  <td><span class="status-badge badge-pending"><i class="fa-solid fa-clock"></i> Pending</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+
+                <!-- 4 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-9818</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Bali Ubud Wellness &amp; Coastal Retreat</span>
+                      <span class="table-sub-text">Bali, Indonesia · 9 Days</span>
+                    </div>
+                  </td>
+                  <td>Jul 29, 2026</td>
+                  <td>Mar 04, 2027</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$2,780.00</strong></td>
+                  <td><span class="status-badge badge-confirmed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-confirmed"><i class="fa-solid fa-circle-check"></i> Confirmed</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+
+                <!-- 5 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-8102</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Kyoto Imperial Autumn Blossom Odyssey</span>
+                      <span class="table-sub-text">Japan · 8 Days</span>
+                    </div>
+                  </td>
+                  <td>Jun 10, 2026</td>
+                  <td>Sep 05, 2026</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$2,490.00</strong></td>
+                  <td><span class="status-badge badge-cancelled">Refunded</span></td>
+                  <td><span class="status-badge badge-cancelled"><i class="fa-solid fa-ban"></i> Cancelled</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+
+                <!-- 6 -->
+                <tr>
+                  <td><strong style="color: var(--admin-primary); font-family: monospace;">#ORD-7640</strong></td>
+                  <td>
+                    <div class="table-info-stack">
+                      <span class="table-title-bold">Amalfi Coast Clifftops &amp; Mediterranean Sea</span>
+                      <span class="table-sub-text">Italy · 7 Days</span>
+                    </div>
+                  </td>
+                  <td>May 10, 2025</td>
+                  <td>Jun 12, 2025</td>
+                  <td>2 Adults</td>
+                  <td><strong style="color: var(--admin-primary); font-family: var(--font-heading);">$3,190.00</strong></td>
+                  <td><span class="status-badge badge-completed">Paid in Full</span></td>
+                  <td><span class="status-badge badge-completed"><i class="fa-solid fa-flag-checkered"></i> Completed</span></td>
+                  <td>
+                    <a href="order-details.html" class="action-pill-btn"><i class="fa-solid fa-eye"></i> Details</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="admin-footer">
+        <div>&copy; 2026 Travel Junkie Holidays Worldwide Admin Portal.</div>
+        <a href="customers.html">Back to Customers</a>
+      </footer>
+    </div>
+  </div>
+
+</body>
+</html>

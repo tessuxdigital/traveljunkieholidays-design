@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Junkie Holidays – Foreign Trips for Groups, Families &amp; Friends</title>
+  <!-- Pure CSS Stylesheets - Zero JavaScript -->
+  <link rel="stylesheet" href="css/style.css?v=iv-svg-v9">
+  <link rel="stylesheet" href="css/animations.css?v=like-pkg-v1">
+  <link rel="stylesheet" href="css/responsive.css?v=iv-svg-v9">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="header-wrapper">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+
+        <!-- Mobile Checkbox Toggle (Pure CSS) -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- Navigation Links & Actions -->
+        <div class="nav-links-wrapper">
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Home</a></li>
+            <li><a href="packages.html#foreign" class="nav-link">Foreign</a></li>
+            <li><a href="packages.html#family" class="nav-link">Family</a></li>
+            <li><a href="hotels.html" class="nav-link">Group Stay</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li><a href="packages.html" class="nav-link">College IV</a></li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="login.html" class="btn btn-accent nav-auth-btn">
+              <i class="fa-regular fa-circle-user"></i>
+              <span>Login</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO DESTINATION SLIDESHOW (AUTOMATIC FULL-SCREEN SLIDER - PURE CSS)
+       ========================================================================== -->
+  <section class="hero-slider-section">
+    <!-- 5 AUTOMATIC DESTINATION SLIDES (25s Cycle - 5s per destination) -->
+    <div class="hero-slides-wrapper">
+
+      <!-- SLIDE 1 – FOREIGN, GROUPS -->
+      <article class="hero-slide slide-1">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="container hero-slide-container">
+          <div class="hero-slide-content">
+            <div class="hero-slide-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Abroad</span>
+              <i class="fa-solid fa-angle-right badge-sep"></i>
+              <em>Together</em>
+            </div>
+            <h1 class="hero-slide-title">
+              Foreign Trips, Planned Together.
+            </h1>
+            <p class="hero-slide-desc">
+              Flights, hotels, and a shared plan for a family, a friends’ circle, or a larger group.
+            </p>
+            <div class="hero-slide-meta">
+              <span class="slide-meta-pill">
+                <i class="fa-regular fa-calendar-check"></i>
+                Singapore, Dubai, and Europe departures
+              </span>
+            </div>
+            <div class="hero-slide-actions">
+              <a href="packages.html#foreign" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-compass"></i>
+                <span>View Foreign Trips</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Plan Your Group</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 2 – DUBAI, FAMILIES -->
+      <article class="hero-slide slide-2">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="container hero-slide-container">
+          <div class="hero-slide-content">
+            <div class="hero-slide-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Dubai</span>
+              <i class="fa-solid fa-angle-right badge-sep"></i>
+              <em>Family</em>
+            </div>
+            <h1 class="hero-slide-title">
+              A Family Week Abroad.
+            </h1>
+            <p class="hero-slide-desc">
+              Hotel, airport transfers, and one easy evening out. The days stay open enough for parents and children.
+            </p>
+            <div class="hero-slide-meta">
+              <span class="slide-meta-pill">
+                <i class="fa-regular fa-calendar-check"></i>
+                Four nights, flights from India
+              </span>
+            </div>
+            <div class="hero-slide-actions">
+              <a href="packages.html#foreign-dubai" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-compass"></i>
+                <span>View Dubai</span>
+              </a>
+              <a href="contact.html?package=foreign-dubai" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Ask for Dates</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 3 – EUROPE, FRIENDS AND GROUPS -->
+      <article class="hero-slide slide-3">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="container hero-slide-container">
+          <div class="hero-slide-content">
+            <div class="hero-slide-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Europe</span>
+              <i class="fa-solid fa-angle-right badge-sep"></i>
+              <em>Group</em>
+            </div>
+            <h1 class="hero-slide-title">
+              Friends and Groups, One Plan.
+            </h1>
+            <p class="hero-slide-desc">
+              Paris and the Swiss lakes on one ticket. Hotels, the train between cities, and room splits that work for friends travelling together.
+            </p>
+            <div class="hero-slide-meta">
+              <span class="slide-meta-pill">
+                <i class="fa-regular fa-calendar-check"></i>
+                Eight days, flights from India
+              </span>
+            </div>
+            <div class="hero-slide-actions">
+              <a href="packages.html#foreign-europe" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-compass"></i>
+                <span>View Europe</span>
+              </a>
+              <a href="contact.html?package=foreign-europe" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Plan the Group</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 4 – THAILAND -->
+      <article class="hero-slide slide-4">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="container hero-slide-container">
+          <div class="hero-slide-content">
+            <div class="hero-slide-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Thailand</span>
+              <i class="fa-solid fa-angle-right badge-sep"></i>
+              <em>Friends</em>
+            </div>
+            <h1 class="hero-slide-title">
+              A Friends’ Trip, Kept Simple.
+            </h1>
+            <p class="hero-slide-desc">
+              One hotel, shared transfers, and room splits that work when friends book as one group.
+            </p>
+            <div class="hero-slide-meta">
+              <span class="slide-meta-pill">
+                <i class="fa-regular fa-calendar-check"></i>
+                Flights from India included
+              </span>
+            </div>
+            <div class="hero-slide-actions">
+              <a href="packages.html#foreign" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-compass"></i>
+                <span>View Foreign Trips</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Plan the Group</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 5 – BALI -->
+      <article class="hero-slide slide-5">
+        <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="hero-slide-overlay"></div>
+        <div class="container hero-slide-container">
+          <div class="hero-slide-content">
+            <div class="hero-slide-badge">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>Bali</span>
+              <i class="fa-solid fa-angle-right badge-sep"></i>
+              <em>Family</em>
+            </div>
+            <h1 class="hero-slide-title">
+              Bali for a Family or a Group.
+            </h1>
+            <p class="hero-slide-desc">
+              Villas or hotel rooms, airport pickup, and a loose daily plan so the group can stay together.
+            </p>
+            <div class="hero-slide-meta">
+              <span class="slide-meta-pill">
+                <i class="fa-regular fa-calendar-check"></i>
+                Six nights, flights from India
+              </span>
+            </div>
+            <div class="hero-slide-actions">
+              <a href="packages.html#foreign" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-compass"></i>
+                <span>View Foreign Trips</span>
+              </a>
+              <a href="contact.html" class="btn btn-outline-white btn-lg">
+                <i class="fa-solid fa-arrow-right"></i>
+                <span>Ask for Dates</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- DOCKED CONTROLS: SEARCH BAR -->
+    <div class="hero-docked-controls">
+      <div class="container">
+        <!-- SEARCH BAR (PRESERVED HOMEPAGE DESIGN) -->
+        <div class="search-box-wrapper">
+          <form class="search-form" action="packages.html" method="get">
+            <!-- Destination Search Field -->
+            <div class="search-input-group">
+              <i class="fa-solid fa-location-dot search-icon"></i>
+              <div class="search-field-content">
+                <label for="hero-dest" class="search-label">Where</label>
+                <input type="text" id="hero-dest" name="destination" class="search-input" placeholder="Singapore, Dubai, Europe, or Bali">
+              </div>
+            </div>
+
+            <!-- Travel Date Field -->
+            <div class="search-input-group">
+              <i class="fa-regular fa-calendar-days search-icon"></i>
+              <div class="search-field-content">
+                <label for="hero-date" class="search-label">Travel date</label>
+                <input type="date" id="hero-date" name="travel_date" class="search-input" value="2027-01-18">
+              </div>
+            </div>
+
+            <!-- Guest Selection Field -->
+            <div class="search-input-group">
+              <i class="fa-solid fa-user-group search-icon"></i>
+              <div class="search-field-content">
+                <label for="hero-guests" class="search-label">Who is travelling</label>
+                <select id="hero-guests" name="who" class="search-select">
+                  <option value="family" selected>Family</option>
+                  <option value="friends">Friends</option>
+                  <option value="group">Group</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-accent search-submit-btn">
+              <i class="fa-solid fa-compass"></i>
+              <span>Find a Trip</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHO IS TRAVELLING — full stage for family, friends, and groups
+       ========================================================================== -->
+  <section class="party-stage section-padding" id="trip-types">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Foreign trips</span>
+        <h2 class="section-title">Who is travelling with you?</h2>
+        <p class="section-subtitle">A family, a circle of friends, or a larger group. The picture and the trips change with your choice.</p>
+      </div>
+      <div class="party-board">
+        <input type="radio" name="with-who" id="with-family" checked>
+        <input type="radio" name="with-who" id="with-friends">
+        <input type="radio" name="with-who" id="with-group">
+        <div class="party-layout">
+          <div class="party-choices">
+            <label class="party-choice for-family" for="with-family">
+              <span class="party-mark">01</span>
+              <span class="party-choice-copy"><strong>Family</strong><em>Parents and children</em></span>
+            </label>
+            <label class="party-choice for-friends" for="with-friends">
+              <span class="party-mark">02</span>
+              <span class="party-choice-copy"><strong>Friends</strong><em>A circle travelling together</em></span>
+            </label>
+            <label class="party-choice for-group" for="with-group">
+              <span class="party-mark">03</span>
+              <span class="party-choice-copy"><strong>Group</strong><em>One booking, many rooms</em></span>
+            </label>
+          </div>
+          <div class="party-views">
+            <article class="party-view view-family">
+              <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1400&q=80" alt="Singapore skyline at dusk">
+              <div class="party-view-copy">
+                <p class="party-kicker">Family abroad</p>
+                <h3>A week the children can keep up with</h3>
+                <div class="party-links">
+                  <a href="packages.html#foreign-singapore">Singapore · ₹68,000</a>
+                  <a href="packages.html#foreign-dubai">Dubai · ₹54,000</a>
+                  <a href="packages.html#foreign-europe">Europe · ₹1,45,000</a>
+                </div>
+              </div>
+            </article>
+            <article class="party-view view-friends">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=80" alt="Dubai skyline">
+              <div class="party-view-copy">
+                <p class="party-kicker">Friends abroad</p>
+                <h3>One hotel, and room splits that work</h3>
+                <div class="party-links">
+                  <a href="packages.html#foreign-dubai">Dubai · ₹54,000</a>
+                  <a href="packages.html#foreign-singapore">Singapore · ₹68,000</a>
+                  <a href="packages.html#foreign-europe">Europe · ₹1,45,000</a>
+                </div>
+              </div>
+            </article>
+            <article class="party-view view-group">
+              <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1400&q=80" alt="Paris in the evening">
+              <div class="party-view-copy">
+                <p class="party-kicker">Group abroad</p>
+                <h3>Dates, flights, and rooms held together</h3>
+                <div class="party-links">
+                  <a href="packages.html#foreign-europe">Europe · ₹1,45,000</a>
+                  <a href="packages.html#foreign-dubai">Dubai · ₹54,000</a>
+                  <a href="packages.html#foreign-singapore">Singapore · ₹68,000</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOREIGN TRIPS — groups, families, friends
+       ========================================================================== -->
+  <section class="section-padding" id="foreign-home">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Places</span>
+        <h2 class="section-title">Popular destinations</h2>
+        <p class="section-subtitle">Foreign trips for a family, a circle of friends, or a larger group, plus a few holidays inside India.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=800&q=80" alt="Singapore skyline" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Family</span>
+            <h3 class="package-title">Singapore with Family</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Singapore</div>
+            <p class="destination-desc">City hotel, one theme-park day, and airport transfers. A pace that works with children.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹68,000</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#foreign-singapore" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=foreign-singapore" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80" alt="Dubai skyline" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 5 Days / 4 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Friends</span>
+            <h3 class="package-title">Dubai with Friends</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Dubai</div>
+            <p class="destination-desc">A shared hotel, a desert evening, and one free day for the group to split up or stay together.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹54,000</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#foreign-dubai" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=foreign-dubai" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" alt="Paris in the evening" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 8 Days / 7 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Group</span>
+            <h3 class="package-title">Europe as a Group</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Paris and Switzerland</div>
+            <p class="destination-desc">Two cities, the train between them, and rooms arranged for a group travelling on one booking.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹1,45,000</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#foreign-europe" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=foreign-europe" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?auto=format&fit=crop&w=800&q=80" alt="Thailand temple and sky" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 6 Days / 5 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Friends</span>
+            <h3 class="package-title">Thailand with Friends</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Bangkok and Phuket</div>
+            <p class="destination-desc">A city stay and a beach stay, with rooms split for friends on one booking.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹62,000</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#foreign" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=foreign-thailand" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali rice terraces" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Group</span>
+            <h3 class="package-title">Bali for a Group</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Bali</div>
+            <p class="destination-desc">Villas or hotel rooms, airport pickup, and a loose daily plan for a group.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹72,000</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#foreign" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=foreign-bali" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80" alt="Palace city in Rajasthan" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 7 Days / 6 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Family · India</span>
+            <h3 class="package-title">Rajasthan with Family</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Jaipur and Udaipur</div>
+            <p class="destination-desc">Forts, a lake stay, and short drives paced for parents and children.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per person from</span>
+                <span class="price-val">₹28,500</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#family-rajasthan" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=family-rajasthan" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       EXPLORE BY CATEGORY
+       ========================================================================== -->
+  <section class="section-padding bg-secondary-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge badge-accent-soft"><i class="fa-solid fa-layer-group"></i> Ways to travel</span>
+        <h2 class="section-title">Explore by category</h2>
+        <p class="section-subtitle">Foreign trips first, grouped by who is going. College visits stay available as their own category.</p>
+      </div>
+      <div class="grid grid-3">
+        <a href="packages.html#foreign" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-people-roof"></i></div><h3 class="category-title">Family abroad</h3><span class="category-tours-count">Singapore, Dubai, Europe</span></a>
+        <a href="packages.html#foreign" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-user-group"></i></div><h3 class="category-title">Friends trips</h3><span class="category-tours-count">Shared hotels and rooms</span></a>
+        <a href="packages.html#foreign" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-users"></i></div><h3 class="category-title">Group departures</h3><span class="category-tours-count">One booking, many rooms</span></a>
+        <a href="packages.html#family" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-mountain-sun"></i></div><h3 class="category-title">Family in India</h3><span class="category-tours-count">Rajasthan, Kerala, hills</span></a>
+        <a href="packages.html" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-industry"></i></div><h3 class="category-title">College visits</h3><span class="category-tours-count">Plant tours for batches</span></a>
+        <a href="hotels.html" class="category-card"><div class="category-icon-box"><i class="fa-solid fa-hotel"></i></div><h3 class="category-title">Stays</h3><span class="category-tours-count">Hotels for the party</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WHY CHOOSE US
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge badge-accent-soft"><i class="fa-solid fa-shield-heart"></i> How a trip is put together</span>
+        <h2 class="section-title">Why travellers book together</h2>
+        <p class="section-subtitle">The same desk plans a family holiday, a friends’ trip, a larger group, and a college visit.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-plane-departure"></i></div><h3 class="feature-title">Flights from India</h3><p class="feature-desc">Departures quoted from Bengaluru, Delhi, or Mumbai, with the party on the same flights when seats allow.</p></div>
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-bed"></i></div><h3 class="feature-title">Rooms for everyone</h3><p class="feature-desc">Family rooms, twin shares for friends, or a block of rooms for a group, arranged before you pay.</p></div>
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-user-check"></i></div><h3 class="feature-title">One coordinator</h3><p class="feature-desc">One person holds the dates, the hotel, and the changes, from the first call until you land back.</p></div>
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-indian-rupee-sign"></i></div><h3 class="feature-title">A price per person</h3><p class="feature-desc">The quote shows what each person pays, so a family or a group can see the total before confirming.</p></div>
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-clock"></i></div><h3 class="feature-title">A pace that fits</h3><p class="feature-desc">Family days stay lighter. Friends and groups can add a free day instead of a packed list.</p></div>
+        <div class="feature-card"><div class="feature-icon-box"><i class="fa-solid fa-building-columns"></i></div><h3 class="feature-title">College visits too</h3><p class="feature-desc">Departments can still book a plant tour, with the bus, the stay, and the visit report kept separate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       STORIES
+       ========================================================================== -->
+  <section class="section-padding bg-secondary-section">
+    <div class="container">
+      <div class="editorial-grid">
+        <div class="editorial-img-wrap">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80" alt="Friends travelling together" loading="lazy">
+          <div class="editorial-floating-badge">
+            <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary-color); text-transform: uppercase;">From the desk</span>
+            <h4 style="font-size: 1.15rem; margin: 0.25rem 0;">How to split a foreign trip</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0;">Rooms, flights, and who pays for the children.</p>
+          </div>
+        </div>
+        <div>
+          <span class="section-badge"><i class="fa-solid fa-newspaper"></i> Stories</span>
+          <h2 style="font-size: 2.35rem; margin-bottom: 1.25rem;">Notes before you travel together</h2>
+          <p style="font-size: 1.05rem; line-height: 1.7; color: var(--text-body); margin-bottom: 1.75rem;">Short notes for families, friends, and groups leaving India on the same booking.</p>
+          <div class="editorial-story-card">
+            <div class="story-date">Family · 5 min read</div>
+            <h3 class="story-title"><a href="packages.html#foreign-singapore">What to book first on a family trip to Singapore</a></h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">Hotel location, one park day, and the flight that gets you in before dinner.</p>
+          </div>
+          <div class="editorial-story-card">
+            <div class="story-date">Friends · 4 min read</div>
+            <h3 class="story-title"><a href="packages.html#foreign-dubai">Sharing a Dubai hotel without sharing every hour</a></h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">One desert evening together, and a free day for the group to split.</p>
+          </div>
+          <div class="editorial-story-card">
+            <div class="story-date">Group · 6 min read</div>
+            <h3 class="story-title"><a href="packages.html#foreign-europe">Holding rooms for a group between Paris and Switzerland</a></h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0;">The train, the two hotels, and the names that have to match the tickets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       REVIEWS
+       ========================================================================== -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge"><i class="fa-solid fa-comments"></i> From recent trips</span>
+        <h2 class="section-title">What travellers say</h2>
+        <p class="section-subtitle">Families, friends, and groups who left India on a plan from this desk.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial-text">"We took our parents and two children to Singapore. The hotel was near the park, and the airport car was waiting. The days were not packed, which is what we had asked for."</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Ananya Rao" class="user-avatar" loading="lazy">
+            <div class="user-info">
+              <h4>Ananya Rao</h4>
+              <span class="user-location"><i class="fa-solid fa-location-dot"></i> Bengaluru · Family trip</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial-text">"Six of us went to Dubai. Rooms were next to each other, and we still had one free afternoon. The desert evening was the only fixed plan, and that was enough."</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Karthik Menon" class="user-avatar" loading="lazy">
+            <div class="user-info">
+              <h4>Karthik Menon</h4>
+              <span class="user-location"><i class="fa-solid fa-location-dot"></i> Kochi · Friends trip</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fa-solid fa-quote-left quote-icon"></i>
+          <p class="testimonial-text">"Our group of twelve did Paris and a Swiss lake town. Tickets, the train, and the room list were in one note. Nobody had to chase a separate booking."</p>
+          <div class="testimonial-user">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Meera Iyer" class="user-avatar" loading="lazy">
+            <div class="user-info">
+              <h4>Meera Iyer</h4>
+              <span class="user-location"><i class="fa-solid fa-location-dot"></i> Chennai · Group trip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       COLLEGE IV — two sections, not the focus
+       ========================================================================== -->
+  <section class="section-padding iv-chapter" id="college-iv">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">College visits</span>
+        <h2 class="section-title">Industrial visits for colleges</h2>
+        <p class="section-subtitle">A separate booking for a department batch. Plant entry, a bus, and a student stay.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80" alt="Automobile workshop floor" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 3 Days / 2 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Automobile</span>
+            <h3 class="package-title">Pune Auto Plant Visit</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Pune, Maharashtra</div>
+            <p class="destination-desc">Assembly-line walkthrough, a safety briefing, and a group stay near the plant.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per student from</span>
+                <span class="price-val">₹2,450</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#auto" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=pune-auto" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=80" alt="Pharmaceutical laboratory" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 4 Days / 3 Nights</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Pharma</span>
+            <h3 class="package-title">Hyderabad Pharma Visit</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Hyderabad, Telangana</div>
+            <p class="destination-desc">Two plant units, a quality-lab briefing, and a written visit report for the department.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per student from</span>
+                <span class="price-val">₹3,400</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#tech" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=hyderabad-pharma" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="package-card">
+          <div class="package-img-box">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Electronics campus" loading="lazy">
+            <span class="package-duration-badge"><i class="fa-regular fa-clock"></i> 2 Days / 1 Night</span>
+          </div>
+          <div class="package-card-body">
+            <span class="package-category-tag">Electronics</span>
+            <h3 class="package-title">Bengaluru Electronics Floor</h3>
+            <div class="package-destination-row"><i class="fa-solid fa-location-dot"></i> Bengaluru, Karnataka</div>
+            <p class="destination-desc">An assembly floor and a faculty room, scheduled around college hours.</p>
+            <div class="package-pricing-row">
+              <div class="package-price-wrap">
+                <span class="price-sub">Per student from</span>
+                <span class="price-val">₹1,850</span>
+              </div>
+              <div class="package-actions">
+                <a href="packages.html#tech" class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-route"></i> View Plan</a>
+                <a href="contact.html?package=bengaluru-electronics" class="btn btn-accent btn-sm"><i class="fa-solid fa-paper-plane"></i> Enquire</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding iv-points-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">For departments</span>
+        <h2 class="section-title">What a college visit includes</h2>
+      </div>
+      <div class="iv-points">
+        <article class="iv-point">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="16" width="40" height="32" rx="4" fill="none" stroke="#102A43" stroke-width="3"/><path d="M20 28 h24 M20 36 h16" stroke="#247BA0" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Plant permission</h3>
+          <p>Gate pass and the department letter, requested before the batch leaves campus.</p>
+        </article>
+        <article class="iv-point">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="28" width="44" height="16" rx="4" fill="#102A43"/><circle cx="20" cy="48" r="4" fill="#FFB703"/><circle cx="44" cy="48" r="4" fill="#FFB703"/></svg>
+          <h3>Bus and stay</h3>
+          <p>Group transport and a student stay near the plant, quoted per student.</p>
+        </article>
+        <article class="iv-point">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 14 h20 l8 8 v28 H18 Z" fill="none" stroke="#102A43" stroke-width="3"/><path d="M38 14 v8 h8 M24 32 h16 M24 40 h10" stroke="#FFB703" stroke-width="3" stroke-linecap="round"/></svg>
+          <h3>Visit report</h3>
+          <p>A short report the department can file after the students return.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       NEWSLETTER SECTION
+       ========================================================================== -->
+  <section class="section-padding" style="padding-top: 1rem;">
+    <div class="container">
+      <div class="newsletter-card">
+        <svg class="newsletter-blob" viewBox="0 0 600 600" aria-hidden="true"><path fill="#FFB703" d="M430 80c70 40 130 120 140 210 12 96-30 170-100 220-72 50-170 70-250 40-86-32-140-110-150-190-12-90 30-180 100-230 68-48 170-90 260-50Z"/></svg>
+        <svg class="newsletter-plane" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+          <circle cx="60" cy="60" r="46" stroke="#FFB703" stroke-width="1.5" stroke-dasharray="4 7" opacity="0.7"/>
+          <path d="M34 68 86 42l-18 46-10-16-24-4Z" fill="#FFB703"/>
+          <path d="m58 72 8 14" stroke="#102A43" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <div class="grid grid-2" style="align-items: center; position: relative; z-index: 1;">
+          <div>
+            <span class="section-badge badge-white-soft">
+              <i class="fa-solid fa-envelope-open-text"></i> Trip notes
+            </span>
+            <h2 style="color: #FFFFFF; font-size: 2.35rem; margin-bottom: 0.75rem;">
+              Dates for your group
+            </h2>
+            <p style="color: #D9E2EC; font-size: 1.05rem;">
+              Share an email. We reply with open dates for family, friends, and group departures.
+            </p>
+          </div>
+          <div>
+            <form class="newsletter-form-row" action="contact.html" method="get">
+              <input type="email" class="newsletter-input" placeholder="Email address..." required>
+              <button type="submit" class="btn btn-accent btn-lg">
+                <i class="fa-solid fa-paper-plane"></i> Subscribe
+              </button>
+            </form>
+            <p style="font-size: 0.8rem; color: #9FB3C8; margin-top: 0.85rem;">
+              <i class="fa-solid fa-lock"></i> We respect your privacy. No spam, unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="Travel Junkie Holidays"><img src="assets/images/logo.png" alt="Travel Junkie Holidays" class="brand-logo-img"></a>
+          <p class="footer-desc">
+            Foreign trips for a group, a family, or friends.
+          </p>
+          <div class="footer-socials">
+            <a href="https://facebook.com" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" class="social-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://youtube.com" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://linkedin.com" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="packages.html#foreign"><i class="fa-solid fa-angle-right"></i> Foreign Trips</a></li>
+            <li><a href="packages.html#family"><i class="fa-solid fa-angle-right"></i> Family in India</a></li>
+            <li><a href="hotels.html"><i class="fa-solid fa-angle-right"></i> Group Stay</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Our Story</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact</a></li>
+            <li><a href="packages.html"><i class="fa-solid fa-angle-right"></i> College visits</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Popular Destinations -->
+        <div>
+          <h4 class="footer-col-title">Places</h4>
+          <ul class="footer-links-list">
+            <li><a href="packages.html#foreign-singapore"><i class="fa-solid fa-angle-right"></i> Singapore</a></li>
+            <li><a href="packages.html#foreign-dubai"><i class="fa-solid fa-angle-right"></i> Dubai</a></li>
+            <li><a href="packages.html#foreign-europe"><i class="fa-solid fa-angle-right"></i> Europe</a></li>
+            <li><a href="packages.html#family-rajasthan"><i class="fa-solid fa-angle-right"></i> Rajasthan</a></li>
+            <li><a href="packages.html#family-kerala"><i class="fa-solid fa-angle-right"></i> Kerala</a></li>
+            <li><a href="packages.html#family-himachal"><i class="fa-solid fa-angle-right"></i> Himachal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Office -->
+        <div>
+          <h4 class="footer-col-title">Talk to us</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Bengaluru, Karnataka, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 80 4555 2100</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>ivdesk@traveljunkieholidays.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Monday–Saturday, 9:00–18:00 IST</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Travel Junkie Holidays. Industrial visit trips for colleges.
+        </div>
+        <div style="font-size: 0.85rem; color: #9FB3C8;">
+          Plant visits. Group stays. Department reports.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" title="Back to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+</body>
+</html>
